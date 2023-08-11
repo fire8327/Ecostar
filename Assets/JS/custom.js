@@ -3,7 +3,7 @@
 $("#toggler, #overlay, .link").click(()=>{
   $("#menu").toggleClass("max-lg:-translate-y-full")
   $("#menu").toggleClass("max-lg:top-0")
-  $("#menu").toggleClass("max-lg:top-full")
+  $("#menu").toggleClass("max-lg:top-[calc(100%+1px)]")
   $("#overlay").toggleClass("hidden")
   $("#toggler").toggleClass("h-5")
   $("#toggler > :nth-child(1)").toggleClass("rotate-45")
