@@ -9,24 +9,37 @@
     <title>Главная</title>
 </head>
 <body>
-    <header class="w-full relative">
-        <div class="flex items-center justify-between container mx-auto px-4">
-            <a href="">
-                <img src="" alt="">
-            </a>
-            <nav class="flex items-center gap-4 max-lg:flex-col bg-white max-lg:absolute max-lg:w-full top-0 left-0 max-lg:-translate-y-full transition-all duration-500 max-lg:py-4" id="menu">
-                <a href="">Home</a>
-                <a href="">About Us</a>
-                <a href="">Services</a>
-                <a href="">Pages</a>
-                <a href="">Contact Us</a>
+    <header class="w-full h-screen">
+        <div class="w-full py-3.5 border-b border-[#787878] text-[#FAFAFA] font-semibold relative" id="main">
+            <nav class="container mx-auto px-5 flex items-center justify-center lg:justify-between">
+                <a href="#" class="uppercase text-3xl lg:text-4xl">ЭКО<span class="font-bold text-[#686868]">ПРО</span></a>
+                <div class="flex max-lg:absolute max-lg:w-full max-lg:left-0 max-lg:top-0 max-lg:p-7 max-lg:z-40 max-lg:bg-[#1A1A1B] transition-transform duration-500 max-lg:-translate-y-full max-lg:flex-col lg:items-center gap-12 md:gap-16 xl:gap-20" id="menu">
+                    <div class="flex max-lg:flex-col lg:items-center gap-7 md:gap-12 lg:gap-16">
+                        <a href="">О компании</a>
+                        <a href="">Услуги</a>
+                        <a href="">Контакты</a>
+                    </div>
+                    <div class="flex items-center gap-7">
+                        <a href="" target="_blank">
+                            <img src="Assets/Images/header/tg.svg" alt="">
+                        </a>
+                        <a href="" target="_blank">
+                            <img src="Assets/Images/header/wa.svg" alt="">
+                        </a>
+                        <a href="">
+                            <img src="Assets/Images/header/phone.svg" alt="">
+                        </a>
+                    </div>
+                </div>
             </nav>
-            <button id="toggler" type="button" class="flex flex-col w-6 gap-1 lg:hidden">
-                <span class="w-full rounded-full bg-black h-0.5"></span>
-                <span class="w-full rounded-full bg-black h-0.5"></span>
-                <span class="w-full rounded-full bg-black h-0.5"></span>
+            <button class="absolute lg:hidden left-7 top-1/2 -translate-y-1/2 flex flex-col z-50 justify-between w-[26px] transition-all ease-linear h-3.5" id="toggler">
+                <span class="w-full h-0.5 bg-[#FAFAFA] rounded-[1px] origin-[0] transition-transform ease-linear duration-200"></span>
+                <span class="w-full h-0.5 bg-[#FAFAFA] rounded-[1px] transition-opacity ease-linear duration-200"></span>
+                <span class="w-full h-0.5 bg-[#FAFAFA] rounded-[1px] origin-[0] transition-transform ease-linear duration-200"></span>
             </button>
+            <div class="absolute inset-0 bg-black opacity-60 z-30 top-full h-screen hidden lg:hidden" id="overlay"></div>
         </div>
+        <img src="Assets/Images/header/main.png" alt="" class="absolute inset-0 object-cover w-full h-full -z-[1] object-center max-lg:-scale-x-100">
     </header>  
 
     <footer>
