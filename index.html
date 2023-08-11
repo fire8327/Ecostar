@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Главная</title>
 </head>
-<body class="text-[#FAFAFA]">
+<body class="text-[#FAFAFA] bg-[#1A1A1B]">
     <header class="w-full h-screen">
         <div class="w-full py-3.5 border-b border-[#787878] font-semibold relative" id="main">
             <nav class="container mx-auto px-5 flex items-center justify-center lg:justify-between">
@@ -46,16 +46,149 @@
                 <p class="w-full max-w-[956px] font-semibold text-3xl md:text-5xl xl:text-[70px]">Общество с ограниченной ответственностью «Экостар»</p>
                 <p class="w-full max-w-[920px] font-light text-lg md:text-xl xl:text-2xl">Надежный участник рынка сбора, транспортирования, обработки и утилизации отходов грунта и строительства.</p>
             </div>
-            <button class="absolute flex items-center gap-3 md:gap-4 xl:gap-6 bottom-[60px] md:bottom-20 xl:bottom-40">
+            <a href="" class="absolute flex items-center gap-3 md:gap-4 xl:gap-6 bottom-[60px] md:bottom-20 xl:bottom-40">
                 <img src="Assets/Images/icons/arrow.svg" alt="" class="rotate-90 w-12">
                 <span class="font-bold text-lg">Узнать подробнее</span>
-            </button>
+            </a>
         </div>
-
     </header>  
 
-    <footer>
+    <main class="w-full flex flex-col gap-12 md:gap-14 xl:gap-16">
+        <div class="container mx-auto px-5 flex flex-col gap-20 md:gap-32 xl:gap-[180px] pt-10 md:pt-16 xl:pt-24 pb-12 md:pb-14 xl:pb-16">
+            <div class="flex flex-col gap-7 md:gap-10 xl:gap-16">
+                <p class="font-bold text-3xl md:text-4xl xl:text-[42px]">О компании</p>
+                <div class="flex max-md:flex-col lg:items-center gap-12 lg:gap-16 xl:gap-[93px]">
+                    <img src="Assets/Images/about/main.png" alt="">
+                    <div class="flex flex-col w-full max-w-[892px] gap-5 text-sm md:text-base xl:text-lg max-md:order-first">
+                        <p class="text-lg lg:text-xl font-bold">Деятельность компании осуществляется в соответствии с</p>
+                        <div class="flex items-center gap-3">
+                            <img src="Assets/Images/about/check.svg" alt="">
+                            <p>бессрочной лицензией, выданной Министерством жилищно-коммунального хозяйства Московской области</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <img src="Assets/Images/about/check.svg" alt="">
+                            <p>технологией, получившей положительное заключение государственной экологической экспертизы</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <img src="Assets/Images/about/check.svg" alt="">
+                            <p>санитарно-эпидемиологическим заключением</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <img src="Assets/Images/about/check.svg" alt="">
+                            <p>соглашением с Министерством экологии и природопользования Московской области</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <img src="Assets/Images/about/check.svg" alt="">
+                            <p>согласованиями Департамента строительства г. Москвы и Департамента информационных технологий г. Москвы</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4 text-sm md:text-base xl:text-lg">
+                    <p>Кроме того, организация имеет собственное оборудование и специальную технику, которую готова предоставить в аренду на выгодных условиях.</p>
+                    <p>Приоритетами в безупречной работе компании считаем: высокий уровень клиентоориентированности, соблюдение требований действующего экологического законодательства, оперативность в подготовке документации, прозрачность и доступность отчетов.</p>
+                </div>
+                <div class="grid auto-cols-auto grid-flow-row lg:grid-flow-col gap-7 xl:gap-[147px] md:text-lg xl:text-xl">
+                    <div class="flex items-center gap-6">
+                        <p class="text-[#787878] text-6xl font-black inter">01</p>
+                        <p>Официальные объекты утилизации отходов</p>
+                    </div>
+                    <div class="flex items-center gap-6">
+                        <p class="text-[#787878] text-6xl font-black inter">02</p>
+                        <p>Собственное дробильно сортировочное оборудование</p>
+                    </div>
+                    <div class="flex items-center gap-6">
+                        <p class="text-[#787878] text-6xl font-black inter">03</p>
+                        <p>Собственная спецтехника</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-4 md:gap-8 xl:gap-14">
+                <p class="font-bold text-3xl md:text-4xl xl:text-[42px]">Услуги</p>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-8 xl:gap-10 text-xl xl:text-2xl">
+                    <div class="relative">
+                        <img src="Assets/Images/services/1.png" alt="">
+                        <div class="flex flex-col absolute w-full gap-6 md:gap-8 xl:gap-12 justify-end items-center text-center lg:pb-12 xl:pb-14 lg:bottom-0 max-lg:-translate-y-1/2 max-lg:top-1/2 h-fit">
+                            <p class="w-full max-w-[293px]">Утилизация котлованных грунтов и строительных отходов</p>
+                            <button class="flex items-center gap-4 text-lg font-semibold">
+                                <img src="Assets/Images/icons/arrow.svg" alt="">
+                                <span>Узнать подробнее</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <img src="Assets/Images/services/2.png" alt="">
+                        <div class="flex flex-col absolute w-full gap-6 md:gap-8 xl:gap-12 justify-end items-center text-center lg:pb-12 xl:pb-14 lg:bottom-0 max-lg:-translate-y-1/2 max-lg:top-1/2 h-fit">
+                            <p class="w-full max-w-[209px]">Нерудные материалы</p>
+                            <button class="flex items-center gap-4 text-lg font-semibold">
+                                <img src="Assets/Images/icons/arrow.svg" alt="">
+                                <span>Узнать подробнее</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <img src="Assets/Images/services/3.png" alt="">
+                        <div class="flex flex-col absolute w-full gap-6 md:gap-8 xl:gap-12 justify-end items-center text-center lg:pb-12 xl:pb-14 lg:bottom-0 max-lg:-translate-y-1/2 max-lg:top-1/2 h-fit">
+                            <p class="w-full max-w-[215px]">Аренда спецтехники и оборудования</p>
+                            <button class="flex items-center gap-4 text-lg font-semibold">
+                                <img src="Assets/Images/icons/arrow.svg" alt="">
+                                <span>Узнать подробнее</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col gap-4 md:gap-8 xl:gap-2">
+                <p class="font-bold text-3xl md:text-4xl xl:text-[42px]">Контакты</p>
+                <div class="flex lg:items-center lg:justify-between max-lg:flex-col gap-12 md:gap-16 xl:gap-[82px]">
+                    <div class="flex flex-col gap-7 md:gap-9 xl:gap-11 text-sm md:text-base xl:text-xl">
+                        <p class="text-lg md:text-xl xl:text-2xl">Мы всегда готовы ответить на ваши вопросы и обсудить детали сотрудничества. Свяжитесь с нами любым удобным для вас способом:</p>
+                        <div class="flex gap-2.5 md:gap-5 xl:gap-7 items-start">
+                            <img src="Assets/Images/contacts/location.svg" alt="">
+                            <p>Юридический адрес: 142100, Московская область, г.о. Подольск, г. Подольск, ул. Малая Зеленовская, д. 46, офис 206</p>
+                        </div>
+                        <div class="flex gap-2.5 md:gap-5 xl:gap-7 items-start">
+                            <img src="Assets/Images/contacts/people.svg" alt="">
+                            <p>Генеральный директор: Пухов Владислав Андреевич на основании Устава</p>
+                        </div>
+                        <div class="flex gap-2.5 md:gap-5 xl:gap-7 items-start">
+                            <img src="Assets/Images/contacts/phone.svg" alt="">
+                            <div class="flex flex-col gap-5 lg:gap-2">
+                                <a href="tel:89258668466">Тел.: 8 (925) 866-84-66 (Генеральный директор)</a>
+                                <a href="tel:89057739698">Тел.: 8 (905) 773-96-98 (Главный бухгалтер)</a>
+                            </div>
+                        </div>
+                        <div class="flex gap-2.5 md:gap-5 xl:gap-7 items-start">
+                            <img src="Assets/Images/contacts/mail.svg" alt="">
+                            <a href="mailto:info@oooecostar.ru">Е-Mail: info@oooecostar.ru</a>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center text-center border border-[#C2C2C2] rounded-[10px] py-9 md:p-10 xl:py-12 px-8 xl:px-11 gap-12 md:gap-14 xl:gap-16 w-full lg:max-w-[437px]">
+                        <p class="font-bold text-lg md:text-xl xl:text-2xl">Связаться с нами</p>
+                        <div class="flex flex-col gap-5 lg:gap-6 w-full">
+                            <input type="text" class="border-b border-[#FAFAFA] pb-2.5 lg:pb-4 bg-transparent focus:outline-none w-full" placeholder="Введите имя">
+                            <input type="number" class="border-b border-[#FAFAFA] pb-2.5 lg:pb-4 bg-transparent focus:outline-none w-full" placeholder="Введите телефон">
+                        </div>
+                        <div class="flex flex-col gap-5 lg:gap-7 w-full">
+                            <button class="w-full py-1 lg:py-3 border border-[#FAFAFA] rounded-[10px] text-sm md:text-base xl:text-lg">Получить консультацию</button>
+                            <p class="text-white opacity-50 text-xs lg:text-sm">Нажимая на кнопку вы соглашаетесь с <br> политикой конфиденциальности</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <iframe class="w-full grayscale h-[367px] md:h-[500px] xl:h-[659px]" src="https://yandex.ru/map-widget/v1/?um=constructor%3Af7a901c1a80e9b3d467fc09db8e35e88f2e25184de9a180e04216e6441f8a7f8&amp;source=constructor" frameborder="0"></iframe>
+    </main>
 
+    <footer class="w-full py-7 md:py-8 xl:py-10">
+        <div class="container mx-auto px-5 flex justify-between items-center text-[#FAFAFA]/40">
+            <p>© экостарПРО, 2023</p>
+            <a href="" class="hover:text-white transition-colors duration-500">Политика конфиденциальности</a>
+            <a href="" class="hover:text-white transition-colors duration-500">Пользовательское соглашение</a>
+            <a href="" class="flex items-center gap-9 group">
+                <span class="group-hover:text-white transition-colors duration-500">Разработка сайтов</span>
+                <span class="py-2 px-9 border border-[#FFFFFF]/50 rounded-lg group-hover:border-white group-hover:text-white transition-colors duration-500">FILIPPOV</span>
+            </a>
+        </div>
     </footer>
     
 	<script src="https://code.jquery.com/jquery-3.6.3.min.js" 
