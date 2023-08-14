@@ -12,3 +12,13 @@ $("#toggler, #overlay, .link").click(()=>{
   $("#main").toggleClass("bg-[#1A1A1B]")
   $("body").toggleClass("overflow-hidden")
 })
+
+/* scroll */
+$('a[href^="#"]').on('click', function() {
+  $("body").removeClass("overflow-hidden")
+  let href = $(this).attr('href')
+    $('html, body').animate({
+        scrollTop: $(href).offset().top - 40
+    })
+  return false
+});

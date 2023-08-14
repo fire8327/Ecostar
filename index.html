@@ -15,9 +15,9 @@
                 <a href="#" class="uppercase text-4xl">ЭКО<span class="font-bold text-[#686868]">ПРО</span></a>
                 <div class="flex max-lg:absolute max-lg:w-full max-lg:left-0 max-lg:top-0 max-lg:p-7 max-lg:z-40 max-lg:bg-[#1A1A1B] transition-transform duration-500 max-lg:-translate-y-full max-lg:flex-col lg:items-center gap-12 md:gap-16 xl:gap-20" id="menu">
                     <div class="flex max-lg:flex-col lg:items-center gap-7 md:gap-12 xl:gap-16">
-                        <a href="">О компании</a>
-                        <a href="">Услуги</a>
-                        <a href="">Контакты</a>
+                        <a class="link" href="#about">О компании</a>
+                        <a class="link" href="#services">Услуги</a>
+                        <a class="link" href="#contacts">Контакты</a>
                     </div>
                     <div class="flex items-center gap-7">
                         <a href="" target="_blank">
@@ -46,7 +46,7 @@
                 <p class="w-full max-w-[956px] font-semibold text-3xl md:text-5xl xl:text-[70px]">Общество с ограниченной ответственностью «Экостар»</p>
                 <p class="w-full max-w-[920px] font-light text-lg md:text-xl xl:text-2xl">Надежный участник рынка сбора, транспортирования, обработки и утилизации отходов грунта и строительства.</p>
             </div>
-            <a href="" class="absolute flex items-center gap-3 md:gap-4 xl:gap-6 bottom-[60px] md:bottom-20 xl:bottom-40">
+            <a href="#about" class="absolute flex items-center gap-3 md:gap-4 xl:gap-6 bottom-[60px] md:bottom-20 xl:bottom-40">
                 <img src="Assets/Images/icons/arrow.svg" alt="" class="rotate-90 w-12">
                 <span class="font-bold text-lg">Узнать подробнее</span>
             </a>
@@ -55,7 +55,7 @@
 
     <main class="w-full flex flex-col gap-12 md:gap-14 xl:gap-16">
         <div class="container mx-auto px-5 flex flex-col gap-20 md:gap-32 xl:gap-[180px] pt-10 md:pt-16 xl:pt-24 pb-12 md:pb-14 xl:pb-16">
-            <div class="flex flex-col gap-7 md:gap-10 xl:gap-16">
+            <div class="flex flex-col gap-7 md:gap-10 xl:gap-16" id="about">
                 <p class="font-bold text-3xl md:text-4xl xl:text-[42px]">О компании</p>
                 <div class="flex max-md:flex-col lg:items-center gap-12 lg:gap-16 xl:gap-[93px]">
                     <img src="Assets/Images/about/main.png" alt="">
@@ -102,14 +102,14 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col gap-4 md:gap-8 xl:gap-14">
+            <div class="flex flex-col gap-4 md:gap-8 xl:gap-14" id="services">
                 <p class="font-bold text-3xl md:text-4xl xl:text-[42px]">Услуги</p>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-8 xl:gap-10 text-xl xl:text-2xl">
                     <div class="relative">
                         <img src="Assets/Images/services/1.png" alt="">
                         <div class="flex flex-col absolute w-full gap-6 md:gap-8 xl:gap-12 justify-end items-center text-center lg:pb-12 xl:pb-14 lg:bottom-0 max-lg:-translate-y-1/2 max-lg:top-1/2 h-fit">
                             <p class="w-full max-w-[293px]">Утилизация котлованных грунтов и строительных отходов</p>
-                            <a href="" target="_blank" class="flex items-center gap-4 text-lg font-semibold">
+                            <a href="Assets/Docs/1.pdf" target="_blank" class="flex items-center gap-4 text-lg font-semibold">
                                 <img src="Assets/Images/icons/arrow.svg" alt="">
                                 <span>Узнать подробнее</span>
                             </a>
@@ -119,7 +119,7 @@
                         <img src="Assets/Images/services/2.png" alt="">
                         <div class="flex flex-col absolute w-full gap-6 md:gap-8 xl:gap-12 justify-end items-center text-center lg:pb-12 xl:pb-14 lg:bottom-0 max-lg:-translate-y-1/2 max-lg:top-1/2 h-fit">
                             <p class="w-full max-w-[209px]">Нерудные материалы</p>
-                            <a href="" target="_blank" class="flex items-center gap-4 text-lg font-semibold">
+                            <a href="Assets/Docs/2.pdf" target="_blank" class="flex items-center gap-4 text-lg font-semibold">
                                 <img src="Assets/Images/icons/arrow.svg" alt="">
                                 <span>Узнать подробнее</span>
                             </a>
@@ -129,7 +129,7 @@
                         <img src="Assets/Images/services/3.png" alt="">
                         <div class="flex flex-col absolute w-full gap-6 md:gap-8 xl:gap-12 justify-end items-center text-center lg:pb-12 xl:pb-14 lg:bottom-0 max-lg:-translate-y-1/2 max-lg:top-1/2 h-fit">
                             <p class="w-full max-w-[215px]">Аренда спецтехники и оборудования</p>
-                            <a href="" target="_blank" class="flex items-center gap-4 text-lg font-semibold">
+                            <a href="Assets/Docs/3.pdf" target="_blank" class="flex items-center gap-4 text-lg font-semibold">
                                 <img src="Assets/Images/icons/arrow.svg" alt="">
                                 <span>Узнать подробнее</span>
                             </a>
@@ -137,7 +137,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col gap-4 md:gap-8 xl:gap-2">
+            <div class="flex flex-col gap-4 md:gap-8 xl:gap-2" id="contacts">
                 <p class="font-bold text-3xl md:text-4xl xl:text-[42px]">Контакты</p>
                 <div class="flex lg:items-center lg:justify-between max-lg:flex-col gap-12 md:gap-16 xl:gap-[82px]">
                     <div class="flex flex-col gap-7 md:gap-9 xl:gap-11 text-sm md:text-base xl:text-xl">
