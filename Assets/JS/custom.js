@@ -9,7 +9,7 @@ $("#toggler, #overlay, .link").click(()=>{
   $("#toggler > :nth-child(1)").toggleClass("rotate-45")
   $("#toggler > :nth-child(2)").toggleClass("opacity-0")
   $("#toggler > :nth-child(3)").toggleClass("-rotate-45")
-  $("#main").toggleClass("bg-[#1A1A1B]")
+  $("#main").toggleClass("max-lg:bg-[#1A1A1B]")
   $("body").toggleClass("overflow-hidden")
 })
 
