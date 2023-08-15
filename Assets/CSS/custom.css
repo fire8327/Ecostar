@@ -7,3 +7,8 @@ body {
 .inter {
     font-family: 'Inter', sans-serif;
 }
+
+.just-validate-error-label {
+    font-size: 14px;
+    color: #EE3F3F !important;
+}
