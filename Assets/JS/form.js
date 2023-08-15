@@ -18,8 +18,8 @@ validate
     },    
     {
       rule: 'minLength',
-      value: 3,      
-      errorMessage: 'Поле Имя должно иметь минимум 3 символа',
+      value: 2,      
+      errorMessage: 'Поле Имя должно иметь минимум 2 символа',
     },    
   ])
   .addField('#phone_number', [
