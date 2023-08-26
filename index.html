@@ -195,8 +195,8 @@
             </div>
         </div>
         <iframe class="w-full grayscale h-[367px] md:h-[500px] xl:h-[659px]" src="https://yandex.ru/map-widget/v1/?um=constructor%3Af7a901c1a80e9b3d467fc09db8e35e88f2e25184de9a180e04216e6441f8a7f8&amp;source=constructor" frameborder="0"></iframe>
-        <div class="w-full fixed inset-0 bg-[#1A1A1B] z-[60] overflow-y-scroll hidden" id="bid1">
-            <form action="" class="container mx-auto flex flex-col px-5 gap-7 relative py-12 text-xs md:text-sm xl:text-base">
+        <div class="w-full fixed inset-0 bg-[#1A1A1B] z-[60] overflow-y-scroll" id="bid1">
+            <form action="" class="container mx-auto flex flex-col px-5 gap-7 relative py-12 text-xs md:text-sm xl:text-base" autocomplete="off" id="bid1_form">  
                 <button type="button" class="absolute top-4 right-4" id="bid1_close">
                     <img src="Assets/Images/bid/close.svg" alt="">
                 </button>
@@ -224,34 +224,36 @@
                     <p>Объект заказчика, адрес, полное наименование</p>
                     <input type="text" name="bid_object" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 xl:gap-2.5 border-[0.5px] border-[#FAFAFA] rounded-[10px] p-5 relative">
-                    <div class="flex flex-col gap-2.5">
-                        <p>Наименование отходов</p>
-                        <input type="text" list="" name="bid_waste" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
-                    </div>
-                    <div class="flex flex-col gap-2.5">
-                        <p>ФККО</p>
-                        <input type="number" name="bid_fkko" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
-                    </div>
-                    <div class="flex flex-col gap-2.5">
-                        <p>Коэффициент перевода тн/м3</p>
-                        <input type="number" name="bid_index" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
-                    </div>
-                    <div class="grid grid-cols-2 gap-3 xl:gap-2.5">
+                <div class="wastes flex flex-col gap-7">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 xl:gap-2.5 border-[0.5px] border-[#FAFAFA] rounded-[10px] p-5 relative waste">
                         <div class="flex flex-col gap-2.5">
-                            <p>Объем (т)</p>
-                            <input type="number" name="bid_tone" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                            <p>Наименование отходов</p>
+                            <input type="text" list="" name="bid_waste" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                         </div>
                         <div class="flex flex-col gap-2.5">
-                            <p>Объем (м3)</p>
-                            <input type="number" name="bid_meter" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                            <p>ФККО</p>
+                            <input type="number" name="bid_fkko" id="" readonly class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                         </div>
+                        <div class="flex flex-col gap-2.5">
+                            <p>Коэффициент перевода тн/м3</p>
+                            <input type="number" name="bid_index" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 xl:gap-2.5">
+                            <div class="flex flex-col gap-2.5">
+                                <p>Объем (т)</p>
+                                <input type="number" name="bid_tone" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                            </div>
+                            <div class="flex flex-col gap-2.5">
+                                <p>Объем (м3)</p>
+                                <input type="number" name="bid_meter" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                            </div>
+                        </div>
+                        <button type="button" class="absolute top-3 right-3 w-5 md:w-6 xl:w-7 waste_delete">
+                            <img src="Assets/Images/bid/delete.svg" alt="">
+                        </button>
                     </div>
-                    <button type="button" class="absolute top-3 right-3 w-5 md:w-6 xl:w-7">
-                        <img src="Assets/Images/bid/delete.svg" alt="">
-                    </button>
                 </div>
-                <button type="button" class="mx-auto">+ Добавить еще</button>
+                <button type="button" class="mx-auto" id="waste_clone">+ Добавить еще</button>
                 <div class="flex md:items-center max-md:flex-col gap-3.5 md:gap-12">
                     <div class="flex md:items-center max-md:flex-col gap-5 md:gap-12">
                         <label class="flex items-center gap-2.5">
