@@ -195,7 +195,7 @@
             </div>
         </div>
         <iframe class="w-full grayscale h-[367px] md:h-[500px] xl:h-[659px]" src="https://yandex.ru/map-widget/v1/?um=constructor%3Af7a901c1a80e9b3d467fc09db8e35e88f2e25184de9a180e04216e6441f8a7f8&amp;source=constructor" frameborder="0"></iframe>
-        <div class="w-full fixed inset-0 bg-[#1A1A1B] z-[60] overflow-y-scroll" id="bid1">
+        <div class="w-full fixed inset-0 bg-[#1A1A1B] z-[60] overflow-y-scroll hidden" id="bid1">
             <form action="" class="container mx-auto flex flex-col px-5 gap-7 relative py-12 text-xs md:text-sm xl:text-base" autocomplete="off" id="bid1_form">  
                 <button type="button" class="absolute top-4 right-4" id="bid1_close">
                     <img src="Assets/Images/bid/close.svg" alt="">
@@ -204,48 +204,50 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 md:gap-9 xl:gap-11">
                     <div class="flex flex-col gap-2.5">
                         <p>Дата заключения договора</p>
-                        <input type="date" name="bid_date" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                        <input type="date" name="bid_date" id="bid_date" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                     </div>
                     <div class="flex flex-col gap-3.5 md:gap-5 xl:gap-7">
                         <p>Место расположения объекта образования отходов</p>
-                        <div class="flex lg:items-center max-lg:flex-col gap-5 md:gap-8 xl:gap-10">
-                            <label class="flex items-center gap-2.5">
-                                <input type="radio" name="bid_locate" id="">
-                                г. Москва
-                            </label>
-                            <label class="flex items-center gap-2.5">
-                                <input type="radio" name="bid_locate" id="">
-                                Московская область
-                            </label>
+                        <div id="bid_locate_group">
+                            <div class="flex lg:items-center max-lg:flex-col gap-5 md:gap-8 xl:gap-10">
+                                <label class="flex items-center gap-2.5">
+                                    <input type="radio" name="bid_locate">
+                                    г. Москва
+                                </label>
+                                <label class="flex items-center gap-2.5">
+                                    <input type="radio" name="bid_locate">
+                                    Московская область
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="flex flex-col gap-2.5">
                     <p>Объект заказчика, адрес, полное наименование</p>
-                    <input type="text" name="bid_object" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    <input type="text" name="bid_object" id="bid_object" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                 </div>
                 <div class="wastes flex flex-col gap-7">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 xl:gap-2.5 border-[0.5px] border-[#FAFAFA] rounded-[10px] p-5 relative waste">
                         <div class="flex flex-col gap-2.5">
                             <p>Наименование отходов</p>
-                            <input type="text" list="" name="bid_waste" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                            <input type="text" list="" name="bid_waste" id="bid_waste1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                         </div>
                         <div class="flex flex-col gap-2.5">
                             <p>ФККО</p>
-                            <input type="number" name="bid_fkko" id="" readonly class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                            <input type="text" name="bid_fkko" id="bid_fkko1" readonly class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                         </div>
                         <div class="flex flex-col gap-2.5">
                             <p>Коэффициент перевода тн/м3</p>
-                            <input type="number" name="bid_index" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                            <input type="text" name="bid_index" id="bid_index1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                         </div>
                         <div class="grid grid-cols-2 gap-3 xl:gap-2.5">
                             <div class="flex flex-col gap-2.5">
                                 <p>Объем (т)</p>
-                                <input type="number" name="bid_tone" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                                <input type="text" name="bid_V" id="bid_vgroup1_1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                             </div>
                             <div class="flex flex-col gap-2.5">
                                 <p>Объем (м3)</p>
-                                <input type="number" name="bid_meter" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                                <input type="text" name="bid_V" id="bid_vgroup1_2" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                             </div>
                         </div>
                         <button type="button" class="absolute top-3 right-3 w-5 md:w-6 xl:w-7 waste_delete">
@@ -254,122 +256,130 @@
                     </div>
                 </div>
                 <button type="button" class="mx-auto" id="waste_clone">+ Добавить еще</button>
-                <div class="flex md:items-center max-md:flex-col gap-3.5 md:gap-12">
-                    <div class="flex md:items-center max-md:flex-col gap-5 md:gap-12">
-                        <label class="flex items-center gap-2.5">
-                            <input type="radio" name="bid_disposal" id="">
-                            Да
-                        </label>
-                        <label class="flex items-center gap-2.5">
-                            <input type="radio" name="bid_disposal" id="">
-                            Нет
-                        </label>
+                <div id="bid_disposal_group">
+                    <div class="flex md:items-center max-md:flex-col gap-3.5 md:gap-12">
+                        <div class="flex md:items-center max-md:flex-col gap-5 md:gap-12">
+                            <label class="flex items-center gap-2.5">
+                                <input type="radio" name="bid_disposal">
+                                Да
+                            </label>
+                            <label class="flex items-center gap-2.5">
+                                <input type="radio" name="bid_disposal">
+                                Нет
+                            </label>
+                        </div>
+                        <p class="text-sm md:text-base xl:text-xl max-md:order-first">Договор на утилизацию</p>
                     </div>
-                    <p class="text-sm md:text-base xl:text-xl max-md:order-first">Договор на утилизацию</p>
                 </div>
-                <div class="flex md:items-center max-md:flex-col gap-3.5 md:gap-12">
-                    <div class="flex md:items-center max-md:flex-col gap-5 md:gap-12">
-                        <label class="flex items-center gap-2.5">
-                            <input type="radio" name="bid_transportation" id="">
-                            Да
-                        </label>
-                        <label class="flex items-center gap-2.5">
-                            <input type="radio" name="bid_transportation" id="">
-                            Нет
-                        </label>
+                <div id="bid_transportation_group">
+                    <div class="flex md:items-center max-md:flex-col gap-3.5 md:gap-12">
+                        <div class="flex md:items-center max-md:flex-col gap-5 md:gap-12">
+                            <label class="flex items-center gap-2.5">
+                                <input type="radio" name="bid_transportation">
+                                Да
+                            </label>
+                            <label class="flex items-center gap-2.5">
+                                <input type="radio" name="bid_transportation">
+                                Нет
+                            </label>
+                        </div>
+                        <p class="text-sm md:text-base xl:text-xl max-md:order-first">Договор на утилизацию и транспортирование</p>
                     </div>
-                    <p class="text-sm md:text-base xl:text-xl max-md:order-first">Договор на утилизацию и транспортирование</p>
                 </div>
-                <div class="flex md:items-center max-md:flex-col gap-3.5 md:gap-12">
-                    <div class="flex md:items-center max-md:flex-col gap-5 md:gap-12">
-                        <label class="flex items-center gap-2.5">
-                            <input type="radio" name="bid_permission" id="">
-                            Да
-                        </label>
-                        <label class="flex items-center gap-2.5">
-                            <input type="radio" name="bid_permission" id="">
-                            Нет
-                        </label>
+                <div id="bid_permission_group">
+                    <div class="flex md:items-center max-md:flex-col gap-3.5 md:gap-12">
+                        <div class="flex md:items-center max-md:flex-col gap-5 md:gap-12">
+                            <label class="flex items-center gap-2.5">
+                                <input type="radio" name="bid_permission">
+                                Да
+                            </label>
+                            <label class="flex items-center gap-2.5">
+                                <input type="radio" name="bid_permission">
+                                Нет
+                            </label>
+                        </div>
+                        <p class="text-sm md:text-base xl:text-xl max-md:order-first">Требуется ли открытие РАЗРЕШЕНИЯ на утилизацию и транспортирование</p>
                     </div>
-                    <p class="text-sm md:text-base xl:text-xl max-md:order-first">Требуется ли открытие РАЗРЕШЕНИЯ на утилизацию и транспортирование</p>
                 </div>
-                <div class="flex md:items-center max-md:flex-col gap-3.5 md:gap-12">
-                    <div class="flex md:items-center max-md:flex-col gap-5 md:gap-12">
-                        <label class="flex items-center gap-2.5">
-                            <input type="radio" name="bid_eco" id="">
-                            Да
-                        </label>
-                        <label class="flex items-center gap-2.5">
-                            <input type="radio" name="bid_eco" id="">
-                            Нет
-                        </label>
+                <div id="bid_eco_group">
+                    <div class="flex md:items-center max-md:flex-col gap-3.5 md:gap-12">
+                        <div class="flex md:items-center max-md:flex-col gap-5 md:gap-12">
+                            <label class="flex items-center gap-2.5">
+                                <input type="radio" name="bid_eco">
+                                Да
+                            </label>
+                            <label class="flex items-center gap-2.5">
+                                <input type="radio" name="bid_eco">
+                                Нет
+                            </label>
+                        </div>
+                        <p class="text-sm md:text-base xl:text-xl max-md:order-first">Имеются ли экологические изыскания с лабораторными определениями класса опасности либо протокол биотестирования</p>
                     </div>
-                    <p class="text-sm md:text-base xl:text-xl max-md:order-first">Имеются ли экологические изыскания с лабораторными определениями класса опасности либо протокол биотестирования</p>
                 </div>
                 <p class="text-base md:text-lg xl:text-xl font-bold text-[#787878] mt-5">Контактное лицо</p>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-2.5">
                     <div class="flex flex-col gap-2.5">
                         <p>ФИО</p>
-                        <input type="text" name="bid_fio" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                        <input type="text" name="bid_fio" id="bid_fio" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                     </div>
                     <div class="flex flex-col gap-2.5">
                         <p>Номер телефона</p>
-                        <input type="number" name="bid_number" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                        <input type="text" name="bid_number" id="bid_number" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                     </div>
                 </div>
                 <p class="text-base md:text-lg xl:text-xl font-bold text-[#787878] mt-5">Реквизиты организации</p>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-7 lg:gap-2.5">
                     <div class="flex flex-col gap-2.5">
                         <p>ИНН</p>
-                        <input type="number" name="bid_inn" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                        <input type="text" name="bid_inn" id="bid_inn" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                     </div>
                     <div class="flex flex-col gap-2.5">
                         <p>КПП</p>
-                        <input type="number" name="bid_kpp" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                        <input type="text" name="bid_kpp" id="bid_kpp" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                     </div>
                     <div class="flex flex-col gap-2.5">
                         <p>ОГРН</p>
-                        <input type="number" name="bid_ogrn" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                        <input type="text" name="bid_ogrn" id="bid_ogrn" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                     </div>
                 </div>
                 <div class="flex flex-col gap-2.5">
                     <p>Юридический адрес</p>
-                    <input type="text" name="bid_badress" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    <input type="text" name="bid_badress" id="bid_badress" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                 </div>
                 <div class="flex flex-col gap-2.5">
                     <p>Фактический адрес</p>
-                    <input type="text" name="bid_padress" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    <input type="text" name="bid_padress" id="bid_padress" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                 </div>
                 <div class="flex flex-col gap-2.5">
                     <p>Название банка</p>
-                    <input type="text" name="bid_bank" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    <input type="text" name="bid_bank" id="bid_bank" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                 </div>
                 <div class="flex flex-col gap-2.5">
                     <p>Рассчетный счет</p>
-                    <input type="number" name="bid_rs" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    <input type="text" name="bid_rs" id="bid_rs" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-2.5">
                     <div class="flex flex-col gap-2.5">
                         <p>БИК</p>
-                        <input type="number" name="bid_bik" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                        <input type="text" name="bid_bik" id="bid_bik" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                     </div>
                     <div class="flex flex-col gap-2.5">
                         <p>Корреспондентский счет</p>
-                        <input type="number" name="bid_ks" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                        <input type="text" name="bid_ks" id="bid_ks" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                     </div>
                 </div>
                 <div class="flex flex-col gap-2.5">
                     <p>Генеральный директор</p>
-                    <input type="number" name="bid_director" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    <input type="text" name="bid_director" id="bid_director" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-2.5">
                     <div class="flex flex-col gap-2.5">
                         <p>E-mail</p>
-                        <input type="number" name="bid_orgemail" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                        <input type="email" name="bid_orgemail" id="bid_orgemail" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                     </div>
                     <div class="flex flex-col gap-2.5">
-                        <p>Номер телефона</p>
-                        <input type="number" name="bid_orgnumber" id="" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                        <p>Номер телефона организации</p>
+                        <input type="text" name="bid_orgnumber" id="bid_orgnumber" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                     </div>
                 </div>
                 <button type="submit" class="w-full rounded-[10px] bg-[#FAFAFA] text-[#1A1A1B] py-3.5">Отправить заявку</button>
