@@ -1,6 +1,3 @@
-/* phone mask */
-
-
 /* validate */
 const validate = new JustValidate('#form', {
     validateBeforeSubmitting: true,
