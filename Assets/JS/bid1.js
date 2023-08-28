@@ -14,12 +14,14 @@ $("#waste_clone").click(() => {
     wasteClone.find("#bid_vgroup1").attr('id', 'bid_vgroup' + ($(".waste").length+1))
     wasteClone.find("#bid_vgroup1_1").attr('id', 'bid_vgroup' + ($(".waste").length+1)+'_1')
     wasteClone.find("#bid_vgroup1_2").attr('id', 'bid_vgroup' + ($(".waste").length+1)+'_2')
+    wasteClone.find(".just-validate-error-label").remove()
     let inputs = wasteClone.find("input")
     for (let index = 0; index < inputs.length; index++) {
         inputs[index].value = '';        
     }    
-    wasteClone.appendTo(".wastes")   
-    Validate() 
+    wasteClone.appendTo(".wastes")
+    Validate()
+    updInput()
 })
 
 $(".waste_delete").click((e)=> {
@@ -30,6 +32,7 @@ $(".waste_delete").click((e)=> {
         alert("Этот элемент последний, его нельзя удалить!")
     }
     Validate()
+    updInput()
 })
 
 
@@ -41,15 +44,29 @@ function Validate() {
     for (let index = 1; index < $(".waste").length+1; index++) {    
         validate_bid
         .addField(`#bid_waste${index}`, [
-          {
-            rule: 'required',
-            errorMessage: 'Поле Наименование отходов обязательно к заполнению',
-          }  
+            {
+                rule: 'required',
+                errorMessage: 'Поле Наименование отходов обязательно к заполнению',
+            }  
         ])
-        /* .addRequiredGroup(
-            `#bid_vgroup${index}`,
-            'Необходимо заполнить минимум один объем',
-        ) */
+        .addField(`#bid_fkko${index}`, [
+            {
+                rule: 'required',
+                errorMessage: 'Поле ФККО обязательно к заполнению',
+            },  
+            {
+                rule: 'customRegexp',
+                value: /[0-9]/,      
+                errorMessage: 'Поле ФККО должно содержать только цифры',
+            },
+        ])
+        .addField(`#bid_index${index}`, [
+            {
+                rule: 'customRegexp',
+                value: /^[0-9.,]+$/,      
+                errorMessage: 'Поле Коэффициент перевода тн/м3 должно содержать только цифры и разделительные знаки',
+            }  
+        ])
     }
     validate_bid
     .addField('#bid_date', [
@@ -254,3 +271,50 @@ function Validate() {
     ]);
 }
 Validate()
+
+
+/* wastes&fkko */
+let wastes = []
+$.getJSON( "../Assets/Json/wastes.json", function( data ) {
+    $.each( data, function( key, val ) {
+        wastes.push(val)            
+        $("<option value='" + val.name + "'>" + "</option>").appendTo($("#wastes_list"))
+        $("<option value='" + val.fkko + "'>" + "</option>").appendTo($("#fkko_list"))
+    })    
+})
+
+function setFKKO(value, id) {    
+    let waste = null 
+    waste = wastes.find((a) => {
+        return a.name == value
+    })
+    if(waste !== undefined) {
+        $(`#${id}`).val(waste.fkko) 
+    }
+}
+
+function setWaste(value, id) {    
+    let waste = null 
+    waste = wastes.find((a) => {
+        return a.fkko == value
+    })
+    if(waste !== undefined) {
+        $(`#${id}`).val(waste.name) 
+    }
+}
+
+function updInput() {    
+    $(".waste").each((index, el) => {
+        let waste = $(el).find(".bid_waste")
+        let fkko = $(el).find(".bid_fkko")
+        $(waste).on("input", function() {
+            setFKKO($(waste).val(), $(fkko).attr("id"))
+        })
+        $(fkko).on("input", function() {
+            setWaste($(fkko).val(), $(waste).attr("id"))
+        })
+    })
+}
+updInput()
+
+
