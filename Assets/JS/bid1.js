@@ -49,11 +49,7 @@ function Validate() {
                 errorMessage: 'Поле Наименование отходов обязательно к заполнению',
             }  
         ])
-        .addField(`#bid_fkko${index}`, [
-            {
-                rule: 'required',
-                errorMessage: 'Поле ФККО обязательно к заполнению',
-            },  
+        .addField(`#bid_fkko${index}`, [              
             {
                 rule: 'customRegexp',
                 value: /[0-9]/,      
