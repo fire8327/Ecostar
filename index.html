@@ -107,9 +107,9 @@
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 md:gap-8 xl:gap-10 text-xl xl:text-2xl">
                     <div class="relative">
                         <img src="Assets/Images/services/1.png" alt="">
-                        <div class="flex flex-col absolute w-full gap-6 md:gap-8 xl:gap-12 justify-end items-center text-center lg:pb-12 xl:pb-14 lg:bottom-0 max-lg:-translate-y-1/2 max-lg:top-1/2 h-fit">
+                        <div class="flex flex-col absolute w-full gap-6 md:gap-8 lg:gap-4 justify-end items-center text-center lg:pb-4 xl:pb-6 lg:bottom-0 max-lg:-translate-y-1/2 max-lg:top-1/2 h-fit">
                             <p class="w-full max-w-[293px]">Утилизация котлованных грунтов и строительных отходов</p>
-                            <div class="flex flex-col gap-5">
+                            <div class="flex flex-col gap-5 lg:gap-3 xl:gap-5">
                                 <a href="Assets/Docs/1.pdf" target="_blank" class="flex items-center gap-4 text-lg font-semibold">
                                     <img src="Assets/Images/icons/arrow.svg" alt="">
                                     <span>Прайс-лсит</span>
@@ -123,9 +123,9 @@
                     </div>
                     <div class="relative">
                         <img src="Assets/Images/services/2.png" alt="">
-                        <div class="flex flex-col absolute w-full gap-6 md:gap-8 xl:gap-12 justify-end items-center text-center lg:pb-12 xl:pb-14 lg:bottom-0 max-lg:-translate-y-1/2 max-lg:top-1/2 h-fit">
+                        <div class="flex flex-col absolute w-full gap-6 md:gap-8 lg:gap-4 justify-end items-center text-center lg:pb-4 xl:pb-6 lg:bottom-0 max-lg:-translate-y-1/2 max-lg:top-1/2 h-fit">
                             <p class="w-full max-w-[209px]">Нерудные материалы</p>
-                            <div class="flex flex-col gap-5">
+                            <div class="flex flex-col gap-5 lg:gap-3 xl:gap-5">
                                 <a href="Assets/Docs/2.pdf" target="_blank" class="flex items-center gap-4 text-lg font-semibold">
                                     <img src="Assets/Images/icons/arrow.svg" alt="">
                                     <span>Прайс-лсит</span>
@@ -139,9 +139,9 @@
                     </div>
                     <div class="relative">
                         <img src="Assets/Images/services/3.png" alt="">
-                        <div class="flex flex-col absolute w-full gap-6 md:gap-8 xl:gap-12 justify-end items-center text-center lg:pb-12 xl:pb-14 lg:bottom-0 max-lg:-translate-y-1/2 max-lg:top-1/2 h-fit">
+                        <div class="flex flex-col absolute w-full gap-6 md:gap-8 lg:gap-4 justify-end items-center text-center lg:pb-4 xl:pb-6 lg:bottom-0 max-lg:-translate-y-1/2 max-lg:top-1/2 h-fit">
                             <p class="w-full max-w-[215px]">Аренда спецтехники и оборудования</p>
-                            <div class="flex flex-col gap-5">
+                            <div class="flex flex-col gap-5 lg:gap-3 xl:gap-5">
                                 <a href="Assets/Docs/3.pdf" target="_blank" class="flex items-center gap-4 text-lg font-semibold">
                                     <img src="Assets/Images/icons/arrow.svg" alt="">
                                     <span>Прайс-лсит</span>
@@ -196,7 +196,7 @@
         </div>
         <iframe class="w-full grayscale h-[367px] md:h-[500px] xl:h-[659px]" src="https://yandex.ru/map-widget/v1/?um=constructor%3Af7a901c1a80e9b3d467fc09db8e35e88f2e25184de9a180e04216e6441f8a7f8&amp;source=constructor" frameborder="0"></iframe>
         <div class="w-full fixed inset-0 bg-[#1A1A1B] z-[60] overflow-y-scroll hidden" id="bid1">
-            <form action="" class="container mx-auto flex flex-col px-5 gap-7 relative py-12 text-xs md:text-sm xl:text-base" autocomplete="off" id="bid1_form">  
+            <form class="container mx-auto flex flex-col px-5 gap-7 relative py-12 text-xs md:text-sm xl:text-base" autocomplete="off" id="bid1_form">  
                 <button type="button" class="absolute top-4 right-4" id="bid1_close">
                     <img src="Assets/Images/bid/close.svg" alt="">
                 </button>
@@ -211,11 +211,11 @@
                         <div id="bid_locate_group">
                             <div class="flex lg:items-center max-lg:flex-col gap-5 md:gap-8 xl:gap-10">
                                 <label class="flex items-center gap-2.5">
-                                    <input type="radio" name="bid_locate">
+                                    <input type="radio" value="Москва" name="bid_locate">
                                     г. Москва
                                 </label>
                                 <label class="flex items-center gap-2.5">
-                                    <input type="radio" name="bid_locate">
+                                    <input type="radio" value="Московская область" name="bid_locate">
                                     Московская область
                                 </label>
                             </div>
@@ -227,7 +227,7 @@
                     <input type="text" name="bid_object" id="bid_object" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                 </div>
                 <div class="wastes flex flex-col gap-7">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 xl:gap-2.5 border-[0.5px] border-[#FAFAFA] rounded-[10px] p-5 relative waste">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 xl:gap-2.5 border-[0.5px] border-[#FAFAFA] rounded-[10px] p-5 relative waste items-start">
                         <div class="flex flex-col gap-2.5">
                             <p>Наименование отходов</p>
                             <input type="text" list="wastes_list" name="bid_waste" id="bid_waste1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4 bid_waste">
@@ -246,9 +246,10 @@
                                 <input type="text" name="bid_V" id="bid_V1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                             </div>
                             <div class="flex items-center border-[0.5px] border-[#FAFAFA] rounded-[10px] overflow-hidden">
-                                <label class="radio_label text-center h-full py-2 w-1/2">м3<input type="radio" name="bid_change_V" hidden value="м3" checked></label>
-                                <label class="radio_label text-center h-full py-2 w-1/2">т<input type="radio" name="bid_change_V" hidden value="т"></label>
+                                <label class="text-center h-full py-2 w-1/2">м3<input type="radio" class="change_v" name="bid_change_V1" hidden value="м3" checked></label>
+                                <label class="text-center h-full py-2 w-1/2">т<input type="radio" class="change_v" name="bid_change_V1" hidden value="т"></label>
                             </div>
+                            <div class="col-span-full" id="error_V1"></div>
                         </div>
                         <button type="button" class="absolute top-3 right-3 w-5 md:w-6 xl:w-7 waste_delete">
                             <img src="Assets/Images/bid/delete.svg" alt="">
@@ -260,11 +261,11 @@
                     <div class="flex md:items-center max-md:flex-col gap-3.5 md:gap-12">
                         <div class="flex md:items-center max-md:flex-col gap-5 md:gap-12">
                             <label class="flex items-center gap-2.5">
-                                <input type="radio" name="bid_disposal">
+                                <input type="radio" value="Да" name="bid_disposal">
                                 Да
                             </label>
                             <label class="flex items-center gap-2.5">
-                                <input type="radio" name="bid_disposal">
+                                <input type="radio" value="Нет" name="bid_disposal">
                                 Нет
                             </label>
                         </div>
@@ -275,11 +276,11 @@
                     <div class="flex md:items-center max-md:flex-col gap-3.5 md:gap-12">
                         <div class="flex md:items-center max-md:flex-col gap-5 md:gap-12">
                             <label class="flex items-center gap-2.5">
-                                <input type="radio" name="bid_transportation">
+                                <input type="radio" value="Да" name="bid_transportation">
                                 Да
                             </label>
                             <label class="flex items-center gap-2.5">
-                                <input type="radio" name="bid_transportation">
+                                <input type="radio" value="Нет" name="bid_transportation">
                                 Нет
                             </label>
                         </div>
@@ -290,11 +291,11 @@
                     <div class="flex md:items-center max-md:flex-col gap-3.5 md:gap-12">
                         <div class="flex md:items-center max-md:flex-col gap-5 md:gap-12">
                             <label class="flex items-center gap-2.5">
-                                <input type="radio" name="bid_permission">
+                                <input type="radio" value="Да" name="bid_permission">
                                 Да
                             </label>
                             <label class="flex items-center gap-2.5">
-                                <input type="radio" name="bid_permission">
+                                <input type="radio" value="Нет" name="bid_permission">
                                 Нет
                             </label>
                         </div>
@@ -305,11 +306,11 @@
                     <div class="flex md:items-center max-md:flex-col gap-3.5 md:gap-12">
                         <div class="flex md:items-center max-md:flex-col gap-5 md:gap-12">
                             <label class="flex items-center gap-2.5">
-                                <input type="radio" name="bid_eco">
+                                <input type="radio" value="Да" name="bid_eco">
                                 Да
                             </label>
                             <label class="flex items-center gap-2.5">
-                                <input type="radio" name="bid_eco">
+                                <input type="radio" value="Нет" name="bid_eco">
                                 Нет
                             </label>
                         </div>
@@ -384,14 +385,8 @@
                 </div>
                 <button type="submit" class="w-full rounded-[10px] bg-[#FAFAFA] text-[#1A1A1B] py-3.5">Отправить заявку</button>
                 <datalist id="wastes_list">
-                    <option value="Москва"></option>
-                    <option value="Сочи"></option>
-                    <option value="СПб"></option>
                 </datalist>
                 <datalist id="fkko_list">
-                    <option value="Москва"></option>
-                    <option value="Сочи"></option>
-                    <option value="СПб"></option>
                 </datalist>
             </form>
         </div>

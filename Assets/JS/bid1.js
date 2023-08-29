@@ -12,8 +12,10 @@ $("#waste_clone").click(() => {
     wasteClone.find("#bid_fkko1").attr('id', 'bid_fkko' + ($(".waste").length+1))
     wasteClone.find("#bid_index1").attr('id', 'bid_index' + ($(".waste").length+1))
     wasteClone.find("#bid_V1").attr('id', 'bid_V' + ($(".waste").length+1))
+    wasteClone.find("#error_V1").attr('id', 'error_V' + ($(".waste").length+1))
+    wasteClone.find("input[name='bid_change_V1']").attr('name', 'bid_change_V' + ($(".waste").length+1))
     wasteClone.find(".just-validate-error-label").remove()
-    let inputs = wasteClone.find("input")
+    let inputs = wasteClone.find("input:text")
     for (let index = 0; index < inputs.length; index++) {
         inputs[index].value = '';        
     }    
@@ -65,6 +67,19 @@ function Validate() {
                 errorMessage: 'Поле Коэффициент перевода тн/м3 должно содержать только цифры и разделительные знаки ("." , ",")',
             }  
         ])
+        .addField(`#bid_V${index}`, [
+            {
+                rule: 'required',
+                errorMessage: 'Поле Объем обязательно к заполнению',
+            },
+            {
+                rule: 'customRegexp',
+                value: /^[0-9.,]+$/,      
+                errorMessage: 'Поле Объем должно содержать только цифры и разделительные знаки ("." , ",")',
+            }  
+        ], {
+                errorsContainer: `#error_V${index}`,
+        })
     }
     validate_bid
     .addField('#bid_date', [
@@ -315,9 +330,10 @@ function updInput() {
 }
 updInput()
 
+
 /* radio&label */
-/* function changeRadio() {
-    $("input[name='bid_change_V']").each((index, el) => {
+function changeRadio() {
+    $(".change_v").each((index, el) => {
         if($(el).is(":checked")) {
             $(el).parent().addClass("bg-[#FAFAFA] text-[#1A1A1B]")
         } else {
@@ -325,13 +341,49 @@ updInput()
         }
     })
 }
-changeRadio() */
+changeRadio()
+$(".change_v").each((index, el) => {
+    $(el).on("change", () => {
+        changeRadio()
+    })
+})
 
 
 /* submit */
 document.getElementById("bid1_form").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    console.log($(this.bid_change_V).val());
+    e.preventDefault()
+    let date = this.bid_date.value
+    let locate = this.bid_locate.value
+    let object = this.bid_object.value
+    let globalWastes = []
+    let wastes = []
+    $(".waste").each((index, el) => {
+        wastes.push($(el).find("input[name='bid_waste']").val())
+        wastes.push($(el).find("input[name='bid_fkko']").val())
+        wastes.push($(el).find("input[name='bid_index']").val())
+        wastes.push($(el).find("input[name='bid_V']").val())
+        wastes.push($(el).find("input:radio:checked").val())
+        globalWastes.push(wastes)
+        wastes = []
+    })
+    console.log(globalWastes);
+    let disposal = this.bid_disposal.value
+    let transportation = this.bid_transportation.value
+    let permission = this.bid_permission.value
+    let eco = this.bid_eco.value
+    let fio = this.bid_fio.value
+    let number = this.bid_number.value
+    let inn = this.bid_inn.value
+    let kpp = this.bid_kpp.value
+    let ogrn = this.bid_ogrn.value
+    let badress = this.bid_badress.value
+    let padress = this.bid_padress.value
+    let bank = this.bid_bank.value
+    let rs = this.bid_rs.value
+    let bik = this.bid_bik.value
+    let ks = this.bid_ks.value
+    let director = this.bid_director.value
+    let orgemail = this.bid_orgemail.value
+    let orgnumber = this.bid_orgnumber.value
 })
 
