@@ -240,14 +240,14 @@
                             <p>Коэффициент перевода тн/м3</p>
                             <input type="text" name="bid_index" id="bid_index1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                         </div>
-                        <div class="grid grid-cols-2 gap-3 xl:gap-2.5" id="group">
+                        <div class="grid grid-cols-2 gap-3 xl:gap-2.5 items-end">
                             <div class="flex flex-col gap-2.5">
-                                <p>Объем (т)</p>
-                                <input type="text" name="bid_V" id="bid_vgroup1_1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                                <p>Объем</p>
+                                <input type="text" name="bid_V" id="bid_V1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                             </div>
-                            <div class="flex flex-col gap-2.5">
-                                <p>Объем (м3)</p>
-                                <input type="text" name="bid_V" id="bid_vgroup1_2" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                            <div class="flex items-center border-[0.5px] border-[#FAFAFA] rounded-[10px] overflow-hidden">
+                                <label class="radio_label text-center h-full py-2 w-1/2">м3<input type="radio" name="bid_change_V" hidden value="м3" checked></label>
+                                <label class="radio_label text-center h-full py-2 w-1/2">т<input type="radio" name="bid_change_V" hidden value="т"></label>
                             </div>
                         </div>
                         <button type="button" class="absolute top-3 right-3 w-5 md:w-6 xl:w-7 waste_delete">

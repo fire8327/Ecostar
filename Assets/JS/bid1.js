@@ -11,9 +11,7 @@ $("#waste_clone").click(() => {
     wasteClone.find("#bid_waste1").attr('id', 'bid_waste' + ($(".waste").length+1))
     wasteClone.find("#bid_fkko1").attr('id', 'bid_fkko' + ($(".waste").length+1))
     wasteClone.find("#bid_index1").attr('id', 'bid_index' + ($(".waste").length+1))
-    wasteClone.find("#bid_vgroup1").attr('id', 'bid_vgroup' + ($(".waste").length+1))
-    wasteClone.find("#bid_vgroup1_1").attr('id', 'bid_vgroup' + ($(".waste").length+1)+'_1')
-    wasteClone.find("#bid_vgroup1_2").attr('id', 'bid_vgroup' + ($(".waste").length+1)+'_2')
+    wasteClone.find("#bid_V1").attr('id', 'bid_V' + ($(".waste").length+1))
     wasteClone.find(".just-validate-error-label").remove()
     let inputs = wasteClone.find("input")
     for (let index = 0; index < inputs.length; index++) {
@@ -317,4 +315,23 @@ function updInput() {
 }
 updInput()
 
+/* radio&label */
+/* function changeRadio() {
+    $("input[name='bid_change_V']").each((index, el) => {
+        if($(el).is(":checked")) {
+            $(el).parent().addClass("bg-[#FAFAFA] text-[#1A1A1B]")
+        } else {
+            $(el).parent().removeClass("bg-[#FAFAFA] text-[#1A1A1B]")
+        }
+    })
+}
+changeRadio() */
+
+
+/* submit */
+document.getElementById("bid1_form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    console.log($(this.bid_change_V).val());
+})
 
