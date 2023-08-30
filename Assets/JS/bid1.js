@@ -288,7 +288,7 @@ Validate()
 
 /* wastes&fkko */
 let wastes = []
-$.getJSON( "../Assets/Json/wastes.json", function( data ) {
+$.getJSON( "/Ecostar/Assets/Json/wastes.json", function( data ) {
     $.each( data, function( key, val ) {
         wastes.push(val)            
         $("<option value='" + val.name + "'>" + "</option>").appendTo($("#wastes_list"))
