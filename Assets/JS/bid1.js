@@ -136,6 +136,12 @@ function Validate() {
           errorMessage: 'Поле Номер телефона должно иметь минимум 11 символов',
         }
     ])
+    .addField('#bid_orgname', [
+        {
+            rule: 'required',
+            errorMessage: 'Поле Наименование организации обязательно к заполнению',
+        }
+    ])
     .addField('#bid_inn', [
         {
             rule: 'required',
@@ -354,8 +360,9 @@ document.getElementById("bid1_form").addEventListener("submit", function (e) {
     e.preventDefault()
 
     if(validate_bid1.isValid) {
+        let date = new Date(this.bid_date.value)
         let message = `<b>Заявка на заключение договора</b>\n`;
-        message += `<b>Дата заключения договора: </b> ${this.bid_date.value}\n`;
+        message += `<b>Дата заключения договора: </b> ${date.toLocaleDateString()}\n`;
         message += `<b>Место расположения объекта образования отходов: </b> ${this.bid_locate.value}\n`;
         message += `<b>Объект заказчика, адрес, полное наименование: </b> ${this.bid_object.value}\n\n\n`;
         message += `<b>-----------------------------------</b>\n`;
@@ -374,6 +381,7 @@ document.getElementById("bid1_form").addEventListener("submit", function (e) {
         message += `<b>ФИО: </b> ${this.bid_fio.value}\n`;
         message += `<b>Номер телефона: </b> ${this.bid_number.value}\n\n\n`;
         message += `<b>Реквизиты организации</b>\n`;
+        message += `<b>Наименование организации: </b> ${this.bid_orgname.value}\n`;
         message += `<b>ИНН: </b> ${this.bid_inn.value}\n`;
         message += `<b>КПП: </b> ${this.bid_kpp.value}\n`;
         message += `<b>ОГРН: </b> ${this.bid_ogrn.value}\n`;
