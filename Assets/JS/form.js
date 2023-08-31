@@ -46,7 +46,7 @@ document.getElementById("form").addEventListener("submit", function (e) {
     e.preventDefault();
 
     if(validate.isValid) {
-    let message = `<b>Заявка с сайта!</b>\n`;
+    let message = `<b>Консультация.</b>\n`;
     message += `<b>Отправитель: </b> ${this.name.value}\n`;
     message += `<b>Номер телефона: </b> ${this.number.value}`;
 

@@ -37,12 +37,12 @@ $(".waste_delete").click((e)=> {
 
 
 /* validate */
-const validate_bid = new JustValidate('#bid1_form', {
+const validate_bid1 = new JustValidate('#bid1_form', {
     validateBeforeSubmitting: true,
 });
 function Validate() {    
     for (let index = 1; index < $(".waste").length+1; index++) {    
-        validate_bid
+        validate_bid1
         .addField(`#bid_waste${index}`, [
             {
                 rule: 'required',
@@ -81,7 +81,7 @@ function Validate() {
                 errorsContainer: `#error_V${index}`,
         })
     }
-    validate_bid
+    validate_bid1
     .addField('#bid_date', [
         {
             rule: 'required',
@@ -148,8 +148,8 @@ function Validate() {
         },
         {
           rule: 'minLength',
-          value: 12,      
-          errorMessage: 'Поле ИНН должно иметь минимум 12 символов',
+          value: 10,      
+          errorMessage: 'Поле ИНН должно иметь минимум 10 символов',
         }
     ])
     .addField('#bid_kpp', [
@@ -288,7 +288,7 @@ Validate()
 
 /* wastes&fkko */
 let wastes = []
-$.getJSON( "/Ecostar/Assets/Json/wastes.json", function( data ) {
+$.getJSON( "/Assets/Json/wastes.json", function( data ) {
     $.each( data, function( key, val ) {
         wastes.push(val)            
         $("<option value='" + val.name + "'>" + "</option>").appendTo($("#wastes_list"))
@@ -352,38 +352,57 @@ $(".change_v").each((index, el) => {
 /* submit */
 document.getElementById("bid1_form").addEventListener("submit", function (e) {
     e.preventDefault()
-    let date = this.bid_date.value
-    let locate = this.bid_locate.value
-    let object = this.bid_object.value
-    let globalWastes = []
-    let wastes = []
-    $(".waste").each((index, el) => {
-        wastes.push($(el).find("input[name='bid_waste']").val())
-        wastes.push($(el).find("input[name='bid_fkko']").val())
-        wastes.push($(el).find("input[name='bid_index']").val())
-        wastes.push($(el).find("input[name='bid_V']").val())
-        wastes.push($(el).find("input:radio:checked").val())
-        globalWastes.push(wastes)
-        wastes = []
-    })
-    console.log(globalWastes);
-    let disposal = this.bid_disposal.value
-    let transportation = this.bid_transportation.value
-    let permission = this.bid_permission.value
-    let eco = this.bid_eco.value
-    let fio = this.bid_fio.value
-    let number = this.bid_number.value
-    let inn = this.bid_inn.value
-    let kpp = this.bid_kpp.value
-    let ogrn = this.bid_ogrn.value
-    let badress = this.bid_badress.value
-    let padress = this.bid_padress.value
-    let bank = this.bid_bank.value
-    let rs = this.bid_rs.value
-    let bik = this.bid_bik.value
-    let ks = this.bid_ks.value
-    let director = this.bid_director.value
-    let orgemail = this.bid_orgemail.value
-    let orgnumber = this.bid_orgnumber.value
+
+    if(validate_bid1.isValid) {
+        let message = `<b>Заявка на заключение договора</b>\n`;
+        message += `<b>Дата заключения договора: </b> ${this.bid_date.value}\n`;
+        message += `<b>Место расположения объекта образования отходов: </b> ${this.bid_locate.value}\n`;
+        message += `<b>Объект заказчика, адрес, полное наименование: </b> ${this.bid_object.value}\n\n\n`;
+        message += `<b>-----------------------------------</b>\n`;
+        $(".waste").each((index, el) => {
+            message += `<b>Наименование отходов: </b> ${$(el).find("input[name='bid_waste']").val()}\n`;
+            message += `<b>ФККО: </b> ${$(el).find("input[name='bid_fkko']").val()}\n`;
+            message += `<b>Коэффициент перевода тн/м3: </b> ${$(el).find("input[name='bid_index']").val()}\n`;
+            message += `<b>Объем: </b> ${$(el).find("input[name='bid_V']").val()}${$(el).find("input:radio:checked").val()}\n`;
+            message += `<b>-----------------------------------</b>\n`;
+        })
+        message += `\n\n<b>Договор на утилизацию: </b> ${this.bid_disposal.value}\n`;
+        message += `<b>Договор на утилизацию и транспортирование: </b> ${this.bid_transportation.value}\n`;
+        message += `<b>Требуется ли открытие РАЗРЕШЕНИЯ на утилизацию и транспортирование: </b> ${this.bid_permission.value}\n`;
+        message += `<b>Имеются ли экологические изыскания с лабораторными определениями класса опасности либо протокол биотестирования: </b> ${this.bid_eco.value}\n\n\n`;
+        message += `<b>Контактное лицо</b>\n`;
+        message += `<b>ФИО: </b> ${this.bid_fio.value}\n`;
+        message += `<b>Номер телефона: </b> ${this.bid_number.value}\n\n\n`;
+        message += `<b>Реквизиты организации</b>\n`;
+        message += `<b>ИНН: </b> ${this.bid_inn.value}\n`;
+        message += `<b>КПП: </b> ${this.bid_kpp.value}\n`;
+        message += `<b>ОГРН: </b> ${this.bid_ogrn.value}\n`;
+        message += `<b>Юридический адрес: </b> ${this.bid_badress.value}\n`;
+        message += `<b>Фактический адрес: </b> ${this.bid_padress.value}\n`;
+        message += `<b>Название банка: </b> ${this.bid_bank.value}\n`;
+        message += `<b>Рассчетный счет: </b> ${this.bid_rs.value}\n`;
+        message += `<b>БИК: </b> ${this.bid_bik.value}\n`;
+        message += `<b>Корреспондентский счет: </b> ${this.bid_ks.value}\n`;
+        message += `<b>Генеральный директор: </b> ${this.bid_director.value}\n`;
+        message += `<b>E-mail: </b> ${this.bid_orgemail.value}\n`;
+        message += `<b>Номер телефона организации: </b> ${this.bid_orgnumber.value}\n`;
+
+        console.log(message);
+
+        axios.post(url, {
+            chat_id: chat_id,
+            parse_mode: 'html',
+            text: message
+        })
+        .then((res) => {
+            this.reset()
+        })
+        .catch((err) => {
+            console.warn(err);
+        })
+        .finally(() => {
+            console.log('Конец');
+        })       
+    }     
 })
 
