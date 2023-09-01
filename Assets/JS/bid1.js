@@ -256,12 +256,6 @@ function Validate() {
           errorMessage: 'Поле Корреспондентский счет должно иметь минимум 20 символов',
         }
     ])
-    .addField('#bid_director', [
-        {
-            rule: 'required',
-            errorMessage: 'Поле Генеральный директор обязательно к заполнению',
-        }  
-    ])
     .addField('#bid_orgemail', [
         {
             rule: 'required',
@@ -382,18 +376,19 @@ document.getElementById("bid1_form").addEventListener("submit", function (e) {
         message += `<b>Номер телефона: </b> ${this.bid_number.value}\n\n\n`;
         message += `<b>Реквизиты организации</b>\n`;
         message += `<b>Наименование организации: </b> ${this.bid_orgname.value}\n`;
+        message += `<b>Генеральный директор: </b> ${this.bid_director.value}\n`;
+        message += `<b>Юридический адрес: </b> ${this.bid_badress.value}\n`;
+        message += `<b>Фактический адрес: </b> ${this.bid_padress.value}\n`;
+        message += `<b>Почтовый адрес: </b> ${this.bid_postadress.value}\n`;
         message += `<b>ИНН: </b> ${this.bid_inn.value}\n`;
         message += `<b>КПП: </b> ${this.bid_kpp.value}\n`;
         message += `<b>ОГРН: </b> ${this.bid_ogrn.value}\n`;
-        message += `<b>Юридический адрес: </b> ${this.bid_badress.value}\n`;
-        message += `<b>Фактический адрес: </b> ${this.bid_padress.value}\n`;
         message += `<b>Название банка: </b> ${this.bid_bank.value}\n`;
         message += `<b>Рассчетный счет: </b> ${this.bid_rs.value}\n`;
         message += `<b>БИК: </b> ${this.bid_bik.value}\n`;
         message += `<b>Корреспондентский счет: </b> ${this.bid_ks.value}\n`;
-        message += `<b>Генеральный директор: </b> ${this.bid_director.value}\n`;
-        message += `<b>E-mail: </b> ${this.bid_orgemail.value}\n`;
         message += `<b>Номер телефона организации: </b> ${this.bid_orgnumber.value}\n`;
+        message += `<b>E-mail: </b> ${this.bid_orgemail.value}\n`;
 
         console.log(message);
 

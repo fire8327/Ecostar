@@ -112,7 +112,7 @@
                             <div class="flex flex-col gap-5 lg:gap-3 xl:gap-5">
                                 <a href="Assets/Docs/1.pdf" target="_blank" class="flex items-center gap-4 text-lg font-semibold">
                                     <img src="Assets/Images/icons/arrow.svg" alt="">
-                                    <span>Прайс-лсит</span>
+                                    <span>Прайс-лист</span>
                                 </a>
                                 <button class="flex items-center gap-4 text-lg font-semibold" type="button" id="bid1_open">
                                     <img src="Assets/Images/icons/arrow.svg" alt="">
@@ -128,7 +128,7 @@
                             <div class="flex flex-col gap-5 lg:gap-3 xl:gap-5">
                                 <a href="Assets/Docs/2.pdf" target="_blank" class="flex items-center gap-4 text-lg font-semibold">
                                     <img src="Assets/Images/icons/arrow.svg" alt="">
-                                    <span>Прайс-лсит</span>
+                                    <span>Прайс-лист</span>
                                 </a>
                                 <button class="flex items-center gap-4 text-lg font-semibold" type="button">
                                     <img src="Assets/Images/icons/arrow.svg" alt="">
@@ -144,7 +144,7 @@
                             <div class="flex flex-col gap-5 lg:gap-3 xl:gap-5">
                                 <a href="Assets/Docs/3.pdf" target="_blank" class="flex items-center gap-4 text-lg font-semibold">
                                     <img src="Assets/Images/icons/arrow.svg" alt="">
-                                    <span>Прайс-лсит</span>
+                                    <span>Прайс-лист</span>
                                 </a>
                                 <button class="flex items-center gap-4 text-lg font-semibold" type="button">
                                     <img src="Assets/Images/icons/arrow.svg" alt="">
@@ -333,6 +333,22 @@
                     <p>Наименование организации</p>
                     <input type="text" name="bid_orgname" id="bid_orgname" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                 </div>
+                <div class="flex flex-col gap-2.5">
+                    <p>Генеральный директор</p>
+                    <input type="text" name="bid_director" id="bid_director" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                </div>
+                <div class="flex flex-col gap-2.5">
+                    <p>Юридический адрес</p>
+                    <input type="text" name="bid_badress" id="bid_badress" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                </div>
+                <div class="flex flex-col gap-2.5">
+                    <p>Фактический адрес</p>
+                    <input type="text" name="bid_padress" id="bid_padress" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                </div>
+                <div class="flex flex-col gap-2.5">
+                    <p>Почтовый адрес</p>
+                    <input type="text" name="bid_postadress" id="bid_postadress" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                </div>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-7 lg:gap-2.5">
                     <div class="flex flex-col gap-2.5">
                         <p>ИНН</p>
@@ -346,14 +362,6 @@
                         <p>ОГРН</p>
                         <input type="text" name="bid_ogrn" id="bid_ogrn" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                     </div>
-                </div>
-                <div class="flex flex-col gap-2.5">
-                    <p>Юридический адрес</p>
-                    <input type="text" name="bid_badress" id="bid_badress" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
-                </div>
-                <div class="flex flex-col gap-2.5">
-                    <p>Фактический адрес</p>
-                    <input type="text" name="bid_padress" id="bid_padress" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                 </div>
                 <div class="flex flex-col gap-2.5">
                     <p>Название банка</p>
@@ -373,18 +381,14 @@
                         <input type="text" name="bid_ks" id="bid_ks" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                     </div>
                 </div>
-                <div class="flex flex-col gap-2.5">
-                    <p>Генеральный директор</p>
-                    <input type="text" name="bid_director" id="bid_director" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
-                </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-2.5">
-                    <div class="flex flex-col gap-2.5">
-                        <p>E-mail</p>
-                        <input type="email" name="bid_orgemail" id="bid_orgemail" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
-                    </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-2.5">                    
                     <div class="flex flex-col gap-2.5">
                         <p>Номер телефона организации</p>
                         <input type="text" name="bid_orgnumber" id="bid_orgnumber" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    </div>
+                    <div class="flex flex-col gap-2.5">
+                        <p>E-mail</p>
+                        <input type="email" name="bid_orgemail" id="bid_orgemail" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                     </div>
                 </div>
                 <button type="submit" class="w-full rounded-[10px] bg-[#FAFAFA] text-[#1A1A1B] py-3.5">Отправить заявку</button>
