@@ -355,40 +355,40 @@ document.getElementById("bid1_form").addEventListener("submit", function (e) {
 
     if(validate_bid1.isValid) {
         let date = new Date(this.bid_date.value)
-        let message = `<b>Заявка на заключение договора</b>\n`;
-        message += `<b>Дата заключения договора: </b> ${date.toLocaleDateString()}\n`;
-        message += `<b>Место расположения объекта образования отходов: </b> ${this.bid_locate.value}\n`;
-        message += `<b>Объект заказчика, адрес, полное наименование: </b> ${this.bid_object.value}\n\n\n`;
+        let message = `<b>Заявка на заключение договора на оказание услуг по обращению с отходами</b>\n`;
+        message += `<b>Дата заключения договора:</b> ${date.toLocaleDateString()}\n`;
+        message += `<b>Место расположения объекта образования отходов:</b> ${this.bid_locate.value}\n`;
+        message += `<b>Объект заказчика, адрес, полное наименование:</b> ${this.bid_object.value}\n\n\n`;
         message += `<b>-----------------------------------</b>\n`;
         $(".waste").each((index, el) => {
-            message += `<b>Наименование отходов: </b> ${$(el).find("input[name='bid_waste']").val()}\n`;
-            message += `<b>ФККО: </b> ${$(el).find("input[name='bid_fkko']").val()}\n`;
-            message += `<b>Коэффициент перевода тн/м3: </b> ${$(el).find("input[name='bid_index']").val()}\n`;
-            message += `<b>Объем: </b> ${$(el).find("input[name='bid_V']").val()}${$(el).find("input:radio:checked").val()}\n`;
+            message += `<b>Наименование отходов:</b> ${$(el).find("input[name='bid_waste']").val()}\n`;
+            message += `<b>ФККО:</b> ${$(el).find("input[name='bid_fkko']").val()}\n`;
+            message += `<b>Коэффициент перевода тн/м3:</b> ${$(el).find("input[name='bid_index']").val()}\n`;
+            message += `<b>Объем:</b> ${$(el).find("input[name='bid_V']").val()}${$(el).find("input:radio:checked").val()}\n`;
             message += `<b>-----------------------------------</b>\n`;
         })
-        message += `\n\n<b>Договор на утилизацию: </b> ${this.bid_disposal.value}\n`;
-        message += `<b>Договор на утилизацию и транспортирование: </b> ${this.bid_transportation.value}\n`;
-        message += `<b>Требуется ли открытие РАЗРЕШЕНИЯ на утилизацию и транспортирование: </b> ${this.bid_permission.value}\n`;
-        message += `<b>Имеются ли экологические изыскания с лабораторными определениями класса опасности либо протокол биотестирования: </b> ${this.bid_eco.value}\n\n\n`;
+        message += `\n\n<b>Договор на утилизацию:</b> ${this.bid_disposal.value}\n`;
+        message += `<b>Договор на утилизацию и транспортирование:</b> ${this.bid_transportation.value}\n`;
+        message += `<b>Требуется ли открытие РАЗРЕШЕНИЯ на утилизацию и транспортирование:</b> ${this.bid_permission.value}\n`;
+        message += `<b>Имеются ли экологические изыскания с лабораторными определениями класса опасности либо протокол биотестирования:</b> ${this.bid_eco.value}\n\n\n`;
         message += `<b>Контактное лицо</b>\n`;
-        message += `<b>ФИО: </b> ${this.bid_fio.value}\n`;
-        message += `<b>Номер телефона: </b> ${this.bid_number.value}\n\n\n`;
+        message += `<b>ФИО:</b> ${this.bid_fio.value}\n`;
+        message += `<b>Номер телефона:</b> ${this.bid_number.value}\n\n\n`;
         message += `<b>Реквизиты организации</b>\n`;
-        message += `<b>Наименование организации: </b> ${this.bid_orgname.value}\n`;
-        message += `<b>Генеральный директор: </b> ${this.bid_director.value}\n`;
-        message += `<b>Юридический адрес: </b> ${this.bid_badress.value}\n`;
-        message += `<b>Фактический адрес: </b> ${this.bid_padress.value}\n`;
-        message += `<b>Почтовый адрес: </b> ${this.bid_postadress.value}\n`;
-        message += `<b>ИНН: </b> ${this.bid_inn.value}\n`;
-        message += `<b>КПП: </b> ${this.bid_kpp.value}\n`;
-        message += `<b>ОГРН: </b> ${this.bid_ogrn.value}\n`;
-        message += `<b>Название банка: </b> ${this.bid_bank.value}\n`;
-        message += `<b>Рассчетный счет: </b> ${this.bid_rs.value}\n`;
-        message += `<b>БИК: </b> ${this.bid_bik.value}\n`;
-        message += `<b>Корреспондентский счет: </b> ${this.bid_ks.value}\n`;
-        message += `<b>Номер телефона организации: </b> ${this.bid_orgnumber.value}\n`;
-        message += `<b>E-mail: </b> ${this.bid_orgemail.value}\n`;
+        message += `<b>Наименование организации:</b> ${this.bid_orgname.value}\n`;
+        message += `<b>Генеральный директор:</b> ${this.bid_director.value}\n`;
+        message += `<b>Юридический адрес:</b> ${this.bid_badress.value}\n`;
+        message += `<b>Фактический адрес:</b> ${this.bid_padress.value}\n`;
+        message += `<b>Почтовый адрес:</b> ${this.bid_postadress.value}\n`;
+        message += `<b>ИНН:</b> ${this.bid_inn.value}\n`;
+        message += `<b>КПП:</b> ${this.bid_kpp.value}\n`;
+        message += `<b>ОГРН:</b> ${this.bid_ogrn.value}\n`;
+        message += `<b>Название банка:</b> ${this.bid_bank.value}\n`;
+        message += `<b>Расчетный счет:</b> ${this.bid_rs.value}\n`;
+        message += `<b>БИК:</b> ${this.bid_bik.value}\n`;
+        message += `<b>Корреспондентский счет:</b> ${this.bid_ks.value}\n`;
+        message += `<b>Номер телефона организации:</b> ${this.bid_orgnumber.value}\n`;
+        message += `<b>E-mail:</b> ${this.bid_orgemail.value}\n`;
 
         console.log(message);
 
