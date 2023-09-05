@@ -331,29 +331,10 @@ function updInput() {
 updInput()
 
 
-/* radio&label */
-function changeRadio() {
-    $(".change_v").each((index, el) => {
-        if($(el).is(":checked")) {
-            $(el).parent().addClass("bg-[#FAFAFA] text-[#1A1A1B]")
-        } else {
-            $(el).parent().removeClass("bg-[#FAFAFA] text-[#1A1A1B]")
-        }
-    })
-}
-changeRadio()
-$(".change_v").each((index, el) => {
-    $(el).on("change", () => {
-        changeRadio()
-    })
-})
-
-
 /* submit */
 document.getElementById("bid1_form").addEventListener("submit", function (e) {
     e.preventDefault()
 
-    if(validate_bid1.isValid) {
         let date = new Date(this.bid_date.value)
         let message = `<b>Заявка на заключение договора на оказание услуг по обращению с отходами</b>\n`;
         message += `<b>Дата заключения договора:</b> ${date.toLocaleDateString()}\n`;
@@ -399,6 +380,10 @@ document.getElementById("bid1_form").addEventListener("submit", function (e) {
         })
         .then((res) => {
             this.reset()
+            $("#bid1_success").show(500)
+            setTimeout(() => {
+                $("#bid1_success").hide(500)
+            }, 3000);
         })
         .catch((err) => {
             console.warn(err);
@@ -407,5 +392,4 @@ document.getElementById("bid1_form").addEventListener("submit", function (e) {
             console.log('Конец');
         })       
     }     
-})
-
+)

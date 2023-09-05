@@ -22,3 +22,21 @@ $('a[href^="#"]').on('click', function() {
     })
   return false
 });
+
+
+/* radio&label */
+function changeRadio() {
+    $(".change_v").each((index, el) => {
+        if($(el).is(":checked")) {
+            $(el).parent().addClass("bg-[#FAFAFA] text-[#1A1A1B]")
+        } else {
+            $(el).parent().removeClass("bg-[#FAFAFA] text-[#1A1A1B]")
+        }
+    })
+}
+changeRadio()
+$(".change_v").each((index, el) => {
+    $(el).on("change", () => {
+        changeRadio()
+    })
+})

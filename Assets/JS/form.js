@@ -58,6 +58,10 @@ document.getElementById("form").addEventListener("submit", function (e) {
     .then((res) => {
         this.name.value = ""
         this.number.value = ""
+        $("#success").show(500)
+        setTimeout(() => {
+            $("#success").hide(500)
+        }, 3000);
     })
     .catch((err) => {
         console.warn(err);
