@@ -6,7 +6,7 @@ $("#bid1_open, #bid1_close").click(() => {
 
 
 /* clone&delete wastes */
-$("#waste_clone").click(() => {
+$("#material_clone").click(() => {
     let wasteClone = $(".waste").first().clone(true)
     wasteClone.find("#bid_waste1").attr('id', 'bid_waste' + ($(".waste").length+1))
     wasteClone.find("#bid_fkko1").attr('id', 'bid_fkko' + ($(".waste").length+1))
@@ -64,7 +64,7 @@ function Validate() {
             {
                 rule: 'customRegexp',
                 value: /^[0-9.,]+$/,      
-                errorMessage: 'Поле Коэффициент перевода тн/м3 должно содержать только цифры и разделительные знаки ("." , ",")',
+                errorMessage: 'Поле Коэффициент перевода тн/м³ должно содержать только цифры и разделительные знаки ("." , ",")',
             }  
         ])
         .addField(`#bid_V${index}`, [
@@ -344,7 +344,7 @@ document.getElementById("bid1_form").addEventListener("submit", function (e) {
         $(".waste").each((index, el) => {
             message += `<b>Наименование отходов:</b> ${$(el).find("input[name='bid_waste']").val()}\n`;
             message += `<b>ФККО:</b> ${$(el).find("input[name='bid_fkko']").val()}\n`;
-            message += `<b>Коэффициент перевода тн/м3:</b> ${$(el).find("input[name='bid_index']").val()}\n`;
+            message += `<b>Коэффициент перевода тн/м³:</b> ${$(el).find("input[name='bid_index']").val()}\n`;
             message += `<b>Объем:</b> ${$(el).find("input[name='bid_V']").val()}${$(el).find("input:radio:checked").val()}\n`;
             message += `<b>-----------------------------------</b>\n`;
         })

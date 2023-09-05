@@ -249,7 +249,7 @@
                             <input type="text" list="fkko_list" name="bid_fkko" id="bid_fkko1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4 bid_fkko">
                         </div>
                         <div class="flex flex-col gap-2.5">
-                            <p>Коэффициент перевода тн/м3</p>
+                            <p>Коэффициент перевода тн/м³</p>
                             <input type="text" name="bid_index" id="bid_index1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                         </div>
                         <div class="grid grid-cols-2 gap-3 xl:gap-2.5 items-end">
@@ -258,7 +258,7 @@
                                 <input type="text" name="bid_V" id="bid_V1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                             </div>
                             <div class="flex items-center border-[0.5px] border-[#FAFAFA] rounded-[10px] overflow-hidden">
-                                <label class="text-center h-full py-2 w-1/2">м3<input type="radio" class="change_v" name="bid_change_V1" hidden value="м3" checked></label>
+                                <label class="text-center h-full py-2 w-1/2">м³<input type="radio" class="change_v" name="bid_change_V1" hidden value="м³" checked></label>
                                 <label class="text-center h-full py-2 w-1/2">т<input type="radio" class="change_v" name="bid_change_V1" hidden value="т"></label>
                             </div>
                             <div class="col-span-full" id="error_V1"></div>
@@ -425,40 +425,29 @@
                     </div>
                     <div class="flex flex-col gap-2.5">
                         <p>Адрес доставки</p>
-                        <input type="text" name="bid2_delivery " id="bid2_delivery " class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                        <input type="text" name="bid2_delivery " id="bid2_delivery" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                     </div>
                 </div>
-                <!-- <div class="wastes flex flex-col gap-7">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 xl:gap-2.5 border-[0.5px] border-[#FAFAFA] rounded-[10px] p-5 relative waste items-start">
+                <div class="materials flex flex-col gap-7">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 xl:gap-2.5 border-[0.5px] border-[#FAFAFA] rounded-[10px] p-5 relative material items-start">
                         <div class="flex flex-col gap-2.5">
-                            <p>Наименование отходов</p>
-                            <input type="text" list="wastes_list" name="bid_waste" id="bid_waste1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4 bid_waste">
-                        </div>
-                        <div class="flex flex-col gap-2.5">
-                            <p>ФККО</p>
-                            <input type="text" list="fkko_list" name="bid_fkko" id="bid_fkko1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4 bid_fkko">
+                            <p>Название материала</p>
+                            <input type="text" list="materials_list" name="bid2_material" id="bid2_material1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4 bid2_material">
                         </div>
                         <div class="flex flex-col gap-2.5">
-                            <p>Коэффициент перевода тн/м3</p>
-                            <input type="text" name="bid_index" id="bid_index1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                            <p>Фракция</p>
+                            <input type="text" name="bid2_fraction" id="bid2_fraction1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4 bid2_fraction">
                         </div>
-                        <div class="grid grid-cols-2 gap-3 xl:gap-2.5 items-end">
-                            <div class="flex flex-col gap-2.5">
-                                <p>Объем</p>
-                                <input type="text" name="bid_V" id="bid_V1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
-                            </div>
-                            <div class="flex items-center border-[0.5px] border-[#FAFAFA] rounded-[10px] overflow-hidden">
-                                <label class="text-center h-full py-2 w-1/2">м3<input type="radio" class="change_v" name="bid_change_V1" hidden value="м3" checked></label>
-                                <label class="text-center h-full py-2 w-1/2">т<input type="radio" class="change_v" name="bid_change_V1" hidden value="т"></label>
-                            </div>
-                            <div class="col-span-full" id="error_V1"></div>
+                        <div class="flex flex-col gap-2.5">
+                            <p>Объем (м³)</p>
+                            <input type="text" name="bid2_V" id="bid2_V1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                         </div>
-                        <button type="button" class="absolute top-3 right-3 w-5 md:w-6 xl:w-7 waste_delete">
+                        <button type="button" class="absolute top-3 right-3 w-5 md:w-6 xl:w-7 material_delete">
                             <img src="Assets/Images/bid/delete.svg" alt="">
                         </button>
                     </div>
                 </div>
-                <button type="button" class="mx-auto" id="waste_clone">+ Добавить еще</button> -->
+                <button type="button" class="mx-auto" id="material_clone">+ Добавить еще</button>
                 <p class="text-base md:text-lg xl:text-xl font-bold text-[#787878] mt-5">Контактное лицо</p>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-2.5">
                     <div class="flex flex-col gap-2.5">
@@ -534,11 +523,19 @@
                     </div>
                 </div>
                 <button type="submit" class="w-full rounded-[10px] bg-[#FAFAFA] text-[#1A1A1B] py-3.5">Отправить заявку</button>
+                <div id="bid2_success" class="hidden">
+                    <div class="fixed top-10 right-10 z-10 flex items-center gap-4 bg-[#FAFAFA] text-[#1A1A1B] rounded-[10px] py-2 px-4">
+                        <img src="Assets/Images/icons/info.svg" alt="" class="w-4">
+                        <p>Успешная отправка!</p>
+                    </div>
+                </div>
             </form>
         </div>        
         <datalist id="wastes_list">
         </datalist>
         <datalist id="fkko_list">
+        </datalist>
+        <datalist id="materials_list">
         </datalist>
     </main>
 
