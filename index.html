@@ -152,7 +152,7 @@
                                     <img src="Assets/Images/icons/arrow.svg" alt="" class="w-10">
                                     <span>Прайс-лист</span>
                                 </a>
-                                <button class="flex items-center gap-4 xl:text-lg font-semibold" type="button">
+                                <button class="flex items-center gap-4 xl:text-lg font-semibold" type="button" id="bid3_open">
                                     <img src="Assets/Images/icons/arrow.svg" alt="" class="w-10">
                                     <span>Заявка на договор</span>
                                 </button>
@@ -432,11 +432,11 @@
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 xl:gap-2.5 border-[0.5px] border-[#FAFAFA] rounded-[10px] p-5 relative material items-start">
                         <div class="flex flex-col gap-2.5">
                             <p>Название материала</p>
-                            <input type="text" list="materials_list" name="bid2_material" id="bid2_material1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4 bid2_material">
+                            <input type="text" list="materials_list" name="bid2_material" id="bid2_material1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                         </div>
                         <div class="flex flex-col gap-2.5">
                             <p>Фракция</p>
-                            <input type="text" name="bid2_fraction" id="bid2_fraction1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4 bid2_fraction">
+                            <input type="text" name="bid2_fraction" id="bid2_fraction1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                         </div>
                         <div class="flex flex-col gap-2.5">
                             <p>Объем (м³)</p>
@@ -531,11 +531,126 @@
                 </div>
             </form>
         </div>        
+        <div class="w-full fixed inset-0 bg-[#1A1A1B] z-[60] overflow-y-scroll hidden" id="bid3">
+            <form class="container mx-auto flex flex-col px-5 gap-7 relative py-12 text-xs md:text-sm xl:text-base" autocomplete="off" id="bid3_form">  
+                <button type="button" class="absolute top-4 right-4" id="bid3_close">
+                    <img src="Assets/Images/bid/close.svg" alt="">
+                </button>
+                <p class="font-bold text-lg md:text-xl xl:text-2xl">Форма заполнения заявки на аренду спецтехники и оборудования</p>
+                <div class="flex flex-col gap-2.5">
+                    <p>Дата заключения договора</p>
+                    <input type="date" name="bid3_date" id="bid3_date" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                </div>
+                <div class="equipments flex flex-col gap-7">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 xl:gap-2.5 border-[0.5px] border-[#FAFAFA] rounded-[10px] p-5 relative equipment items-start">
+                        <div class="flex flex-col gap-2.5">
+                            <p>Название спецтехники/оборудования</p>
+                            <input type="text" list="equipments_list" name="bid3_equipment" id="bid3_equipment1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                        </div>
+                        <div class="flex flex-col gap-2.5">
+                            <p>Количество смен</p>
+                            <input type="text" name="bid3_shift" id="bid3_shift1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                        </div>
+                        <div class="flex flex-col gap-2.5 col-span-full">
+                            <p>Объект заказчика, адрес, координаты</p>
+                            <input type="text" name="bid3_object" id="bid3_object1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                        </div>
+                        <button type="button" class="absolute top-3 right-3 w-5 md:w-6 xl:w-7 equipment_delete">
+                            <img src="Assets/Images/bid/delete.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+                <button type="button" class="mx-auto" id="equipment_clone">+ Добавить еще</button>
+                <p class="text-base md:text-lg xl:text-xl font-bold text-[#787878] mt-5">Контактное лицо</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-2.5">
+                    <div class="flex flex-col gap-2.5">
+                        <p>ФИО</p>
+                        <input type="text" name="bid3_fio" id="bid3_fio" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    </div>
+                    <div class="flex flex-col gap-2.5">
+                        <p>Номер телефона</p>
+                        <input type="text" name="bid3_number" id="bid3_number" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    </div>
+                </div>
+                <p class="text-base md:text-lg xl:text-xl font-bold text-[#787878] mt-5">Реквизиты организации</p>                
+                <div class="flex flex-col gap-2.5">
+                    <p>Наименование организации</p>
+                    <input type="text" name="bid3_orgname" id="bid3_orgname" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                </div>
+                <div class="flex flex-col gap-2.5">
+                    <p>Генеральный директор</p>
+                    <input type="text" name="bid3_director" id="bid3_director" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                </div>
+                <div class="flex flex-col gap-2.5">
+                    <p>Юридический адрес</p>
+                    <input type="text" name="bid3_badress" id="bid3_badress" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                </div>
+                <div class="flex flex-col gap-2.5">
+                    <p>Фактический адрес</p>
+                    <input type="text" name="bid3_padress" id="bid3_padress" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                </div>
+                <div class="flex flex-col gap-2.5">
+                    <p>Почтовый адрес</p>
+                    <input type="text" name="bid3_postadress" id="bid3_postadress" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-7 lg:gap-2.5">
+                    <div class="flex flex-col gap-2.5">
+                        <p>ИНН</p>
+                        <input type="text" name="bid3_inn" id="bid3_inn" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    </div>
+                    <div class="flex flex-col gap-2.5">
+                        <p>КПП</p>
+                        <input type="text" name="bid3_kpp" id="bid3_kpp" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    </div>
+                    <div class="flex flex-col gap-2.5">
+                        <p>ОГРН</p>
+                        <input type="text" name="bid3_ogrn" id="bid3_ogrn" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2.5">
+                    <p>Название банка</p>
+                    <input type="text" name="bid3_bank" id="bid3_bank" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                </div>
+                <div class="flex flex-col gap-2.5">
+                    <p>Расчетный счет</p>
+                    <input type="text" name="bid3_rs" id="bid3_rs" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-2.5">
+                    <div class="flex flex-col gap-2.5">
+                        <p>БИК</p>
+                        <input type="text" name="bid3_bik" id="bid3_bik" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    </div>
+                    <div class="flex flex-col gap-2.5">
+                        <p>Корреспондентский счет</p>
+                        <input type="text" name="bid3_ks" id="bid3_ks" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-2.5">                    
+                    <div class="flex flex-col gap-2.5">
+                        <p>Номер телефона организации</p>
+                        <input type="text" name="bid3_orgnumber" id="bid3_orgnumber" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    </div>
+                    <div class="flex flex-col gap-2.5">
+                        <p>E-mail</p>
+                        <input type="email" name="bid3_orgemail" id="bid3_orgemail" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    </div>
+                </div>
+                <button type="submit" class="w-full rounded-[10px] bg-[#FAFAFA] text-[#1A1A1B] py-3.5">Отправить заявку</button>
+                <div id="bid3_success" class="hidden">
+                    <div class="fixed top-10 right-10 z-10 flex items-center gap-4 bg-[#FAFAFA] text-[#1A1A1B] rounded-[10px] py-2 px-4">
+                        <img src="Assets/Images/icons/info.svg" alt="" class="w-4">
+                        <p>Успешная отправка!</p>
+                    </div>
+                </div>
+            </form>
+        </div>        
         <datalist id="wastes_list">
         </datalist>
         <datalist id="fkko_list">
         </datalist>
         <datalist id="materials_list">
+        </datalist>
+        <datalist id="equipments_list">
         </datalist>
     </main>
 
@@ -560,5 +675,6 @@
 	<script src="Assets/JS/form.js"></script>
 	<script src="Assets/JS/bid1.js"></script>
 	<script src="Assets/JS/bid2.js"></script>
+	<script src="Assets/JS/bid3.js"></script>
 </body>
 </html>

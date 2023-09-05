@@ -333,8 +333,8 @@ updInput()
 
 /* submit */
 document.getElementById("bid1_form").addEventListener("submit", function (e) {
-    e.preventDefault()
-
+        e.preventDefault()
+        if(validate_bid1.isValid) {
         let date = new Date(this.bid_date.value)
         let message = `<b>Заявка на заключение договора на оказание услуг по обращению с отходами</b>\n`;
         message += `<b>Дата заключения договора:</b> ${date.toLocaleDateString()}\n`;
@@ -392,4 +392,4 @@ document.getElementById("bid1_form").addEventListener("submit", function (e) {
             console.log('Конец');
         })       
     }     
-)
+})
