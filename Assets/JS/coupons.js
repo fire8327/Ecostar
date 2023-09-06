@@ -60,7 +60,7 @@ function ValidateCoupons() {
                 rule: 'customRegexp',
                 value: /[0-9]/,      
                 errorMessage: 'Поле ФККО должно содержать только цифры',
-            },
+            }
         ])
         .addField(`#coupons_V${index}`, [
             {
