@@ -6,7 +6,7 @@ $("#bid1_open, #bid1_close").click(() => {
 
 
 /* clone&delete wastes */
-$("#material_clone").click(() => {
+$("#waste_clone").click(() => {
     let wasteClone = $(".waste").first().clone(true)
     wasteClone.find("#bid_waste1").attr('id', 'bid_waste' + ($(".waste").length+1))
     wasteClone.find("#bid_fkko1").attr('id', 'bid_fkko' + ($(".waste").length+1))
@@ -58,7 +58,7 @@ function Validate() {
                 rule: 'customRegexp',
                 value: /[0-9]/,      
                 errorMessage: 'Поле ФККО должно содержать только цифры',
-            },
+            }
         ])
         .addField(`#bid_index${index}`, [
             {

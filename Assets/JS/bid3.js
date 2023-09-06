@@ -5,7 +5,7 @@ $("#bid3_open, #bid3_close").click(() => {
 })
 
 
-/* clone&delete wastes */
+/* clone&delete equipments */
 $("#equipment_clone").click(() => {
     let equipmentClone = $(".equipment").first().clone(true)
     equipmentClone.find("#bid3_equipment1").attr('id', 'bid3_equipment' + ($(".equipment").length+1))
@@ -59,7 +59,7 @@ function Validate3() {
                 rule: 'customRegexp',
                 value: /[0-9]/,      
                 errorMessage: 'Поле Количество смен должно содержать только цифры',
-            },
+            }
         ])
     }
     validate_bid3
@@ -79,7 +79,7 @@ function Validate3() {
         {
             rule: 'required',
             errorMessage: 'Поле Номер телефона обязательно к заполнению',
-        }  ,    
+        },    
         {
             rule: 'customRegexp',
             value: /[0-9]/,      
@@ -259,7 +259,7 @@ document.getElementById("bid3_form").addEventListener("submit", function (e) {
     let message = `<b>Заявка на аренду спецтехники и оборудования</b>\n`;
     message += `<b>Дата заключения договора:</b> ${date.toLocaleDateString()}\n`;
     message += `<b>-----------------------------------</b>\n`;
-    $(".material").each((index, el) => {
+    $(".equipment").each((index, el) => {
         message += `<b>Название спецтехники/оборудования:</b> ${$(el).find("input[name='bid3_equipment']").val()}\n`;
         message += `<b>Количество смен:</b> ${$(el).find("input[name='bid3_shift']").val()}\n`;
         message += `<b>Объект заказчика, адрес, координаты:</b> ${$(el).find("input[name='bid3_object']").val()}\n`;

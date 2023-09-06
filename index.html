@@ -120,7 +120,7 @@
                                     <img src="Assets/Images/icons/arrow.svg" alt="" class="w-10">
                                     <span>Заявка на договор</span>
                                 </button>
-                                <button class="flex items-center gap-4 xl:text-lg font-semibold" type="button" id="">
+                                <button class="flex items-center gap-4 xl:text-lg font-semibold" type="button" id="coupons_open">
                                     <img src="Assets/Images/icons/arrow.svg" alt="" class="w-10">
                                     <span>Заявка на талоны</span>
                                 </button>
@@ -199,7 +199,7 @@
                         <div id="success" class="hidden">
                             <div class="fixed top-10 right-10 z-10 flex items-center gap-4 bg-[#FAFAFA] text-[#1A1A1B] rounded-[10px] py-2 px-4">
                                 <img src="Assets/Images/icons/info.svg" alt="" class="w-4">
-                                <p>Успешная отправка!</p>
+                                <p>Заявка успешно создана</p>
                             </div>
                         </div>
                     </form>
@@ -407,7 +407,7 @@
                 <div id="bid1_success" class="hidden">
                     <div class="fixed top-10 right-10 z-10 flex items-center gap-4 bg-[#FAFAFA] text-[#1A1A1B] rounded-[10px] py-2 px-4">
                         <img src="Assets/Images/icons/info.svg" alt="" class="w-4">
-                        <p>Успешная отправка!</p>
+                        <p>Заявка успешно создана</p>
                     </div>
                 </div>
             </form>
@@ -432,7 +432,7 @@
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 xl:gap-2.5 border-[0.5px] border-[#FAFAFA] rounded-[10px] p-5 relative material items-start">
                         <div class="flex flex-col gap-2.5">
                             <p>Название материала</p>
-                            <input type="text" list="materials_list" name="bid2_material" id="bid2_material1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                            <input type="text" list="materials_list" name="bid2_material" id="bid2_material1" placeholder="Введите или выберете значение" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
                         </div>
                         <div class="flex flex-col gap-2.5">
                             <p>Фракция</p>
@@ -526,7 +526,7 @@
                 <div id="bid2_success" class="hidden">
                     <div class="fixed top-10 right-10 z-10 flex items-center gap-4 bg-[#FAFAFA] text-[#1A1A1B] rounded-[10px] py-2 px-4">
                         <img src="Assets/Images/icons/info.svg" alt="" class="w-4">
-                        <p>Успешная отправка!</p>
+                        <p>Заявка успешно создана</p>
                     </div>
                 </div>
             </form>
@@ -639,7 +639,118 @@
                 <div id="bid3_success" class="hidden">
                     <div class="fixed top-10 right-10 z-10 flex items-center gap-4 bg-[#FAFAFA] text-[#1A1A1B] rounded-[10px] py-2 px-4">
                         <img src="Assets/Images/icons/info.svg" alt="" class="w-4">
-                        <p>Успешная отправка!</p>
+                        <p>Заявка успешно создана</p>
+                    </div>
+                </div>
+            </form>
+        </div>        
+        <div class="w-full fixed inset-0 bg-[#1A1A1B] z-[60] overflow-y-scroll hidden" id="coupons">
+            <form class="container mx-auto flex flex-col px-5 gap-7 relative py-12 text-xs md:text-sm xl:text-base" autocomplete="off" id="coupons_form">  
+                <button type="button" class="absolute top-4 right-4" id="coupons_close">
+                    <img src="Assets/Images/bid/close.svg" alt="">
+                </button>
+                <p class="font-bold text-lg md:text-xl xl:text-2xl">Форма заполнения заявки на изготовление талонов</p>
+                <div class="flex flex-col gap-2.5">
+                    <p>Дата подачи заявки</p>
+                    <input type="date" name="coupons_date" id="coupons_date" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-7 lg:gap-2.5">
+                    <div class="flex flex-col gap-2.5">
+                        <p>Наименование организации</p>
+                        <input type="text" name="coupons_orgname" id="coupons_orgname" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    </div>
+                    <div class="flex flex-col gap-2.5">
+                        <p>ИНН</p>
+                        <input type="text" name="coupons_inn" id="coupons_inn" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    </div>
+                    <div class="flex flex-col gap-2.5">
+                        <p>Номер договора</p>
+                        <input type="text" name="coupons_contract" id="coupons_contract" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    </div>
+                </div>
+                <div class="coupons flex flex-col gap-7">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 xl:gap-2.5 border-[0.5px] border-[#FAFAFA] rounded-[10px] p-5 relative coupon items-start">
+                        <div class="flex flex-col gap-2.5">
+                            <p>Наименование отхода</p>
+                            <input type="text" list="wastes_list" name="coupons_waste" id="coupons_waste1" placeholder="Как в договоре" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4 coupons_waste">
+                        </div>
+                        <div class="flex flex-col gap-2.5">
+                            <p>ФККО</p>
+                            <input type="text" list="fkko_list" name="coupons_fkko" id="coupons_fkko1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4 coupons_fkko">
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 xl:gap-2.5 items-end">
+                            <p class="col-span-full">Общий объем (м³/тн)</p>
+                            <div class="flex flex-col gap-2.5">
+                                <input type="text" name="coupons_V" id="coupons_V1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                            </div>
+                            <div class="flex items-center border-[0.5px] border-[#FAFAFA] rounded-[10px] overflow-hidden">
+                                <label class="text-center h-full py-2 w-1/2">м³<input type="radio" class="change_v" name="coupons_change_V1" hidden value="м³" checked></label>
+                                <label class="text-center h-full py-2 w-1/2">т<input type="radio" class="change_v" name="coupons_change_V1" hidden value="т"></label>
+                            </div>
+                            <div class="col-span-full" id="error_coupons_V1"></div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 xl:gap-2.5 items-end">
+                            <p class="col-span-full">Номинал талона (м³/тн)</p>
+                            <div class="flex flex-col gap-2.5">
+                                <input type="text" name="coupons_nominal" id="coupons_nominal1" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                            </div>
+                            <div class="flex items-center border-[0.5px] border-[#FAFAFA] rounded-[10px] overflow-hidden">
+                                <label class="text-center h-full py-2 w-1/2">м³<input type="radio" class="change_v" name="coupons_change_nominal_V1" hidden value="м³" checked></label>
+                                <label class="text-center h-full py-2 w-1/2">т<input type="radio" class="change_v" name="coupons_change_nominal_V1" hidden value="т"></label>
+                            </div>
+                            <div class="col-span-full" id="error_coupons_nominal1"></div>
+                        </div>
+                        <button type="button" class="absolute top-3 right-3 w-5 md:w-6 xl:w-7 coupons_delete">
+                            <img src="Assets/Images/bid/delete.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+                <button type="button" class="mx-auto" id="coupons_clone">+ Добавить еще</button>    
+                <p class="text-base md:text-lg xl:text-xl font-bold text-[#787878] mt-5">Контактное лицо</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-2.5">
+                    <div class="flex flex-col gap-2.5">
+                        <p>ФИО</p>
+                        <input type="text" name="coupons_fio" id="coupons_fio" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    </div>
+                    <div class="flex flex-col gap-2.5">
+                        <p>Номер телефона</p>
+                        <input type="text" name="coupons_number" id="coupons_number" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    </div>
+                </div>
+                <div id="coupons_expense_group">
+                    <div class="flex md:items-center max-md:flex-col gap-3.5 md:gap-12">
+                        <div class="flex md:items-center max-md:flex-col gap-5 md:gap-12">
+                            <label class="flex items-center gap-2.5">
+                                <input type="radio" value="Да" name="coupons_expense">
+                                Да
+                            </label>
+                            <label class="flex items-center gap-2.5">
+                                <input type="radio" value="Нет" name="coupons_expense">
+                                Нет
+                            </label>
+                        </div>
+                        <p class="text-sm md:text-base xl:text-xl max-md:order-first">Необходимо выставить счёт</p>
+                    </div>
+                </div>
+                <div class="hidden" id="account">
+                    <div class="flex flex-col gap-2.5">
+                        <p>Номер счёта</p>
+                        <input type="text" name="coupons_account" id="coupons_account" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2.5">
+                    <p>Желаемые сроки получения талонов</p>
+                    <input type="date" name="coupons_desired" id="coupons_desired" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4">
+                </div>                         
+                <div class="flex flex-col gap-2.5">
+                    <p>Примечания/дополнения по заявке</p>
+                    <textarea type="text" name="coupons_optional" id="coupons_optional" class="w-full bg-transparent border-[0.5px] border-[#FAFAFA] rounded-[10px] py-2 px-4"></textarea>
+                </div>
+                <button type="submit" class="w-full rounded-[10px] bg-[#FAFAFA] text-[#1A1A1B] py-3.5">Отправить заявку</button>
+                <div id="coupons_success" class="hidden">
+                    <div class="fixed top-10 right-10 z-10 flex items-center gap-4 bg-[#FAFAFA] text-[#1A1A1B] rounded-[10px] py-2 px-4">
+                        <img src="Assets/Images/icons/info.svg" alt="" class="w-4">
+                        <p>Заявка успешно создана</p>
                     </div>
                 </div>
             </form>
@@ -676,5 +787,6 @@
 	<script src="Assets/JS/bid1.js"></script>
 	<script src="Assets/JS/bid2.js"></script>
 	<script src="Assets/JS/bid3.js"></script>
+	<script src="Assets/JS/coupons.js"></script>
 </body>
 </html>

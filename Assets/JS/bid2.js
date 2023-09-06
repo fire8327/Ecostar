@@ -5,7 +5,7 @@ $("#bid2_open, #bid2_close").click(() => {
 })
 
 
-/* clone&delete wastes */
+/* clone&delete materials */
 $("#material_clone").click(() => {
     let materialClone = $(".material").first().clone(true)
     materialClone.find("#bid2_material1").attr('id', 'bid2_material' + ($(".material").length+1))
@@ -53,7 +53,7 @@ function Validate2() {
                 rule: 'customRegexp',
                 value: /[0-9]/,      
                 errorMessage: 'Поле Объем (м³) должно содержать только цифры',
-            },
+            }
         ])
         .addField(`#bid2_fraction${index}`, [
             {
@@ -86,7 +86,7 @@ function Validate2() {
         {
             rule: 'required',
             errorMessage: 'Поле Номер телефона обязательно к заполнению',
-        }  ,    
+        },    
         {
             rule: 'customRegexp',
             value: /[0-9]/,      
