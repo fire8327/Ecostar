@@ -159,12 +159,7 @@ $("input[name='coupons_expense']").on("change", ()=> {
         .addField('#coupons_account', [
             {
                 rule: 'required',
-                errorMessage: 'Поле Номер счёта (при наличии) обязательно к заполнению',
-            },  
-            {
-                rule: 'customRegexp',
-                value: /[0-9]/,      
-                errorMessage: 'Поле Номер счёта должно содержать только цифры',
+                errorMessage: 'Поле Номер счёта обязательно к заполнению',
             }
         ]);
     } else {
@@ -216,7 +211,7 @@ document.getElementById("coupons_form").addEventListener("submit", function (e) 
     message += `<b>Номер счёта:</b> ${this.coupons_account.value}\n`;
     if(this.coupons_desired.value) {
         let date2 = new Date(this.coupons_desired.value)
-        message += `<b>Желаемые сроки получения талонов:</b> ${date2}\n`;
+        message += `<b>Желаемые сроки получения талонов:</b> ${date2.toLocaleDateString()}\n`;
     } else {
         message += `<b>Желаемые сроки получения талонов:</b> \n`;
 
