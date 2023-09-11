@@ -63,8 +63,8 @@ function Validate() {
         .addField(`#bid_index${index}`, [
             {
                 rule: 'customRegexp',
-                value: /^[0-9.,]+$/,      
-                errorMessage: 'Поле Коэффициент перевода тн/м³ должно содержать только цифры и разделительные знаки ("." , ",")',
+                value: /^[0-9.]+$/,      
+                errorMessage: 'Поле Коэффициент перевода тн/м³ должно содержать только цифры и разделительные знаки (".")',
             }  
         ])
         .addField(`#bid_V${index}`, [
@@ -74,8 +74,8 @@ function Validate() {
             },
             {
                 rule: 'customRegexp',
-                value: /^[0-9.,]+$/,      
-                errorMessage: 'Поле Объем должно содержать только цифры и разделительные знаки ("." , ",")',
+                value: /^[0-9.]+$/,      
+                errorMessage: 'Поле Объем должно содержать только цифры и разделительные знаки (".")',
             }  
         ], {
                 errorsContainer: `#error_V${index}`,
@@ -346,6 +346,13 @@ document.getElementById("bid1_form").addEventListener("submit", function (e) {
             message += `<b>ФККО:</b> ${$(el).find("input[name='bid_fkko']").val()}\n`;
             message += `<b>Коэффициент перевода тн/м³:</b> ${$(el).find("input[name='bid_index']").val()}\n`;
             message += `<b>Объем:</b> ${$(el).find("input[name='bid_V']").val()}${$(el).find("input:radio:checked").val()}\n`;
+            if($(el).find("input[name='bid_index']").val()) {
+                if($(el).find("input:radio:checked").val() == "м³") {
+                    message += `<b>Объем:</b> ${$(el).find("input[name='bid_V']").val()*$(el).find("input[name='bid_index']").val()}${$(el).find("input:radio:not(:checked)").val()}\n`;
+                } else if($(el).find("input:radio:checked").val() == "т") {
+                    message += `<b>Объем:</b> ${$(el).find("input[name='bid_V']").val()/$(el).find("input[name='bid_index']").val()}${$(el).find("input:radio:not(:checked)").val()}\n`;
+                }
+            }
             message += `<b>-----------------------------------</b>\n`;
         })
         message += `\n\n<b>Договор на утилизацию:</b> ${this.bid_disposal.value}\n`;
